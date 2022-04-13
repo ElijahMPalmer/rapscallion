@@ -16,13 +16,13 @@ const pool = new Pool({
 app.get('/', (req, res) => {
     pool.query('SELECT * FROM users;', async(err, result) => {
         res.send(result);
-        if (await bcrypt.compare(passkey, result.rows[0].passkey)) {
-            console.log('success');
-            res.send("Success");
-        } else {
-            console.log('access denied')
-            res.send("denied");
-        }
+        // if (await bcrypt.compare(passkey, result.rows[0].passkey)) {
+        //     console.log('success');
+        //     res.send("Success");
+        // } else {
+        //     console.log('access denied')
+        //     res.send("denied");
+        // }
     })
 })
 
