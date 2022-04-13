@@ -5,8 +5,7 @@ CREATE TABLE users (
     first_name TEXT,
     last_name TEXT, 
     username TEXT, 
-    passkey TEXT,
-
+    passkey TEXT
 );
 
 INSERT INTO users(first_name, last_name, username, passkey) VALUES ('Elijah', 'Palmer', 'King123', 'Doggie');
