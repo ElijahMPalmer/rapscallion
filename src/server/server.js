@@ -1,20 +1,34 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const bcrypt = require('bcrypt');
-const { Pool } = require('pg');
+const bcrypt = require("bcrypt");
+const { Pool } = require("pg");
 const port = 3000;
 
 app.use(express.json());
 
 const pool = new Pool({
-    database: 'rapusers',
-    ssl: {
-        rejectUnauthorized: false,
-    },
+    // Local host
+    host: "localhost",
+    database: "rapusers",
+    //Deployment
+    //   connectionString: process.env.DATABASE_URL,
+    //   ssl: {
+    //     rejectUnauthorized: false,
+    //   },
 });
 
-app.get('/', (req, res) => {
-    pool.query('SELECT * FROM users;', async(err, result) => {
+//Get database info ↓↓↓↓↓
+app.get("/", async(req, res) => {
+    try {
+        const newUser = await pool.query("SELECT * FROM users");
+        res.status(200).json(newUser.rows);
+    } catch (err) {
+        console.error(err.message);
+    }
+});
+
+app.get("/", (req, res) => {
+    pool.query("SELECT * FROM users;", async(err, result) => {
         res.send(result);
         // if (await bcrypt.compare(passkey, result.rows[0].passkey)) {
         //     console.log('success');
@@ -23,13 +37,13 @@ app.get('/', (req, res) => {
         //     console.log('access denied')
         //     res.send("denied");
         // }
-    })
-})
+    });
+});
 
-app.get('/login/:username/:password', (req, res) => {
-    res.send('Hello World!')
-})
+app.get("/login/:username/:passkey", (req, res) => {
+    res.send("Hello World!");
+});
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+    console.log(`Example app listening on port ${port}`);
+});
