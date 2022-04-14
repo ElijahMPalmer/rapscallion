@@ -9,7 +9,7 @@ const Header = () => {
             <div id="rap-logo"><h1>RAPSCALLION</h1></div>
             <div className="UserButtons"> 
                 <Stack direction="row" spacing={2}>
-                <Button variant="contained">Sign up</Button>
+                <Button variant="contained" color='secondary'>Sign up</Button>
                 <Button variant="outlined">Log in</Button>
                 </Stack>
             </div>
