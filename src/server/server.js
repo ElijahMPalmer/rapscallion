@@ -27,7 +27,7 @@ app.get("/", async(req, res) => {
     }
 });
 
-app.get("/", (req, res) => {
+app.get("/login", (req, res) => {
     pool.query("SELECT * FROM users;", async(err, result) => {
         res.send(result);
         // if (await bcrypt.compare(passkey, result.rows[0].passkey)) {
