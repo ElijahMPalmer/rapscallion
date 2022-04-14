@@ -2,7 +2,7 @@ import React from "react"
 
 const Header = () => {
     return (
-        <div> Header will go here..... </div>
+        <div> We are RapScallion </div>
     )
 }
 export default Header; 

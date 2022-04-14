@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const bcrypt = require("bcrypt");
 const { Pool } = require("pg");
-const port = 3000;
+const port = 4000;
 
 app.use(express.json());
 
