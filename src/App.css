@@ -27,60 +27,6 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        color: #2b4cb8;
-        padding-left: 1em;
-        width: 63%;
-    }
-    
-    .UserButtons {
-        display: flex;
-        justify-content: flex-end;
-        padding: 2em;
-    }
-    
-    .HeaderLinks {
-        background-color: #f2f2f2;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        /* white-space: nowrap; */
-        width: 100%;
-        padding: 1em;
-    }
-    
-    .left-links {
-        display: flex;
-    }
-    
-    a {
-        text-decoration: none;
-        color: black;
-        display: flex;
-        font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
-        padding-right: 5em;
-    }
-    
-    .heading {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .logo-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        width: 100%;
-    }
-    
-    #rap-logo {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
         color: #2980b9;
         padding: 1em;
         width: 63%;
@@ -100,7 +46,7 @@
         align-items: center;
         /* white-space: nowrap; */
         width: 100%;
-        padding: 1em;
+        padding: 1em 0;
     }
     
     #signup-btn {
@@ -139,14 +85,19 @@
         background: linear-gradient(to top, #2c3e50, #2980b9);
     }
     
-    .compat-container main {
-        width: 925px;
+    main {
+        width: 955px;
         padding: 35px;
     }
     
     .compat-container main h1 {
         font-family: Helvetica;
         font-weight: 400;
+        color: white;
+    }
+    
+    .compat-container main h4 {
+        color: white;
     }
     
     .compat-container main h4 {
@@ -191,6 +142,11 @@
         height: 56px;
         border-radius: 0px 8px 8px 0px !important;
         color: orange !important;
+    }
+    
+    .sugg-button {
+        margin: 8px !important;
+        width: 350px;
     }
     
     #search-button:hover {
