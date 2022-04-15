@@ -45,8 +45,8 @@ export default function Signup() {
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 <form className='form-in-sign-up'>
-                <TextField id="outlined" label="Username" margin='normal'/><br/>
-                <TextField id="outlined-password-input" label="Password" type="password" /><br/>
+                <TextField id="outlined" label="Create Username" margin='normal'/><br/>
+                <TextField id="outlined-password-input" label="Create New Password" type="password" /><br/>
                 <Button id='signup-btn'variant='contained' type='submit'>Sign up</Button>
                 </form>
               </Typography>
