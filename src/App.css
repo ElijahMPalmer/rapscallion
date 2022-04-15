@@ -1,137 +1,76 @@
-<<<<<<< HEAD
 .App {
     text-align: center;
-=======
-body{
-  background-color: white;
+}
+
+body {
+    background-color: white;
 }
 
 
 /* header */
-.heading{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-}
-.logo-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;  
-  width: 100%;
+
+.heading {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#rap-logo{
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  color: rgb(43, 76, 184);
-  padding: 1em;
-  width: 63%;
-  
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
 }
 
-.UserButtons{
-  display: flex;
-  justify-content: flex-end;
-  padding: 2em;
-  
-}
-.HeaderLinks{
-  background-color: #f2f2f2;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  /* white-space: nowrap; */
-  width: 100%;
-  padding: 1em;
+#rap-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #2980b9;
+    padding: 1em;
+    width: 63%;
 }
 
-.left-links{
-  display: flex;
+.UserButtons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2em;
 }
 
-a{
-  text-decoration: none;
-  color: black;
-  display: flex;
-  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
-  padding-right: 4.7em;
+.HeaderLinks {
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* white-space: nowrap; */
+    width: 100%;
+    padding: 1em;
+}
+
+.left-links {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+    padding-right: 4.7em;
 }
 
 #ForEmployers {
-  display: flex; 
-  justify-self: flex-end;
-  /* justify-content: flex-end;  */
+    display: flex;
+    justify-self: flex-end;
+    /* justify-content: flex-end;  */
 }
 
-#ForEmployers a{
-  padding-right: 0;
-}
-
-
-/* .HeaderLinks{
-  display: flex;
-  justify-content: space-between;
-  white-space: nowrap;
-  width: 62%;
-  background-color: rgb(242, 242, 242);
-  text-decoration: none;
-  color: rgb(33, 33, 33);
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-
-  font-size: 100%;
-  vertical-align: baseline;
-  font-weight: lighter;
-  padding-left: 300px;
-}
-
-.left-links{
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-  background-color: rgb(242, 242, 242);
-  text-decoration: none;
-  color: rgb(33, 33, 33);
-  align-items: center;
-  font-size: inherit;
-  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
-  /* font-size: 100%;
- */  
- /* tical-align: baseline;
- */  /* font-weight: lighter; */
-/* } */
-
-/* #ForEmployers{
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 50px;
-  font-size: inherit;
-  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
-
- */
-
-
-/* .App {
-  text-align: center;
->>>>>>> 5a4a13b011f217db432abfa282cc7d2918a89ca2
-}
-
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+#ForEmployers a {
+    padding-right: 0;
 }
 
 .compat-container {
@@ -140,8 +79,8 @@ a{
     justify-content: center;
     align-items: center;
     background: #2980b9;
-    /* background: -webkit-linear-gradient(to top, #2c3e50, #2980b9);
-    background: linear-gradient(to top, #2c3e50, #2980b9); */
+    background: -webkit-linear-gradient(to top, #2c3e50, #2980b9);
+    background: linear-gradient(to top, #2c3e50, #2980b9);
 }
 
 .compat-container main {
@@ -187,7 +126,6 @@ a{
     color: #61dafb;
 }
 
-<<<<<<< HEAD
 #companies {
     border-radius: 15px 0px 0px 15px !important;
 }
@@ -215,13 +153,12 @@ a{
         transform: rotate(360deg);
     }
 }
-=======
+
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
->>>>>>> 5a4a13b011f217db432abfa282cc7d2918a89ca2
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
