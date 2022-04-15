@@ -18,7 +18,7 @@ const style = {
     p: 4,
   };
   
-export default function Signin() {
+export default function Signup() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
