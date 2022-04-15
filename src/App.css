@@ -1,164 +1,220 @@
-.App {
-    text-align: center;
-}
-
-body {
-    background-color: white;
-}
-
-
-/* header */
-
-.heading {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-}
-
-#rap-logo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    color: #2980b9;
-    padding: 1em;
-    width: 63%;
-}
-
-.UserButtons {
-    display: flex;
-    justify-content: flex-end;
-    padding: 2em;
-}
-
-.HeaderLinks {
-    background-color: #f2f2f2;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    /* white-space: nowrap; */
-    width: 100%;
-    padding: 1em;
-}
-
-.left-links {
-    display: flex;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-    display: flex;
-    font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
-    padding-right: 4.7em;
-}
-
-#ForEmployers {
-    display: flex;
-    justify-self: flex-end;
-    /* justify-content: flex-end;  */
-}
-
-#ForEmployers a {
-    padding-right: 0;
-}
-
-.compat-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #2980b9;
-    background: -webkit-linear-gradient(to top, #2c3e50, #2980b9);
-    background: linear-gradient(to top, #2c3e50, #2980b9);
-}
-
-.compat-container main {
-    width: 925px;
-    padding: 35px;
-}
-
-.compat-container main h1 {
-    font-family: Helvetica;
-    font-weight: 400;
-}
-
-.compat-container main h4 {
-    font-weight: 300;
-}
-
-.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
-    border: none !important;
-}
-
-.css-kzf2d7-MuiInputBase-root-MuiOutlinedInput-root {
-    border-radius: 0px !important;
-}
-
-.clicked {
-    background-color: rgba(85, 85, 85, 0.4) !important;
-    font-weight: 900 !important;
-    color: orange !important;
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-#companies {
-    border-radius: 15px 0px 0px 15px !important;
-}
-
-#search-button {
-    background-color: white !important;
-    height: 56px;
-    border-radius: 0px 8px 8px 0px !important;
-    color: orange !important;
-}
-
-#search-button:hover {
-    background-color: gray !important;
-}
-
-.pop-search .css-i4bv87-MuiSvgIcon-root {
-    fill: orange !important;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
+    .App {
+        text-align: center;
     }
-    to {
-        transform: rotate(360deg);
+    
+    body {
+        background-color: white;
     }
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
+    /* header */
+    
+    .heading {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-    to {
-        transform: rotate(360deg);
+    
+    .logo-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
     }
-}
+    
+    #rap-logo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: #2b4cb8;
+        padding: 1em;
+        width: 63%;
+    }
+    
+    .UserButtons {
+        display: flex;
+        justify-content: flex-end;
+        padding: 2em;
+    }
+    
+    .HeaderLinks {
+        background-color: #f2f2f2;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        /* white-space: nowrap; */
+        width: 100%;
+        padding: 1em;
+    }
+    
+    .left-links {
+        display: flex;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+        padding-right: 4.7em;
+    }
+    
+    .heading {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .logo-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+    }
+    
+    #rap-logo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: #2980b9;
+        padding: 1em;
+        width: 63%;
+    }
+    
+    .UserButtons {
+        display: flex;
+        justify-content: flex-end;
+        padding: 2em;
+    }
+    
+    .HeaderLinks {
+        background-color: #f2f2f2;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        /* white-space: nowrap; */
+        width: 100%;
+        padding: 1em;
+    }
+    
+    #signup-btn {
+        margin-top: 45px;
+    }
+    
+    .left-links {
+        display: flex;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+        padding-right: 4.7em;
+    }
+    
+    #ForEmployers {
+        display: flex;
+        justify-self: flex-end;
+        /* justify-content: flex-end;  */
+    }
+    
+    #ForEmployers a {
+        padding-right: 0;
+    }
+    
+    .compat-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #2980b9;
+        background: -webkit-linear-gradient(to top, #2c3e50, #2980b9);
+        background: linear-gradient(to top, #2c3e50, #2980b9);
+    }
+    
+    .compat-container main {
+        width: 925px;
+        padding: 35px;
+    }
+    
+    .compat-container main h1 {
+        font-family: Helvetica;
+        font-weight: 400;
+    }
+    
+    .compat-container main h4 {
+        font-weight: 300;
+    }
+    
+    .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+        border: none !important;
+    }
+    
+    .css-kzf2d7-MuiInputBase-root-MuiOutlinedInput-root {
+        border-radius: 0px !important;
+    }
+    
+    .clicked {
+        background-color: rgba(85, 85, 85, 0.4) !important;
+        font-weight: 900 !important;
+        color: orange !important;
+    }
+    
+    .App-header {
+        background-color: #282c34;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(10px + 2vmin);
+        color: white;
+    }
+    
+    .App-link {
+        color: #61dafb;
+    }
+    
+    #companies {
+        border-radius: 15px 0px 0px 15px !important;
+    }
+    
+    #search-button {
+        background-color: white !important;
+        height: 56px;
+        border-radius: 0px 8px 8px 0px !important;
+        color: orange !important;
+    }
+    
+    #search-button:hover {
+        background-color: gray !important;
+    }
+    
+    .pop-search .css-i4bv87-MuiSvgIcon-root {
+        fill: orange !important;
+    }
+    
+    @keyframes App-logo-spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+    @keyframes App-logo-spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
