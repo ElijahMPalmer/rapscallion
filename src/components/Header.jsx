@@ -9,7 +9,6 @@ const Header = () => {
             <div className="logo-container">
             <div id="rap-logo"><h1>RAPSCALLION</h1></div>
             <Signup />
-            {/* <Login /> */}
             </div>
             <div className="HeaderLinks"> 
             <div className="left-links">
