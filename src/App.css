@@ -24,14 +24,17 @@
 }
 
 .compat-container main {
-    width: 65%;
+    width: 925px;
+    padding: 35px;
 }
 
-#discover {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+.compat-container main h1 {
+    font-family: Helvetica;
+    font-weight: 400;
+}
+
+.compat-container main h4 {
+    font-weight: 300;
 }
 
 .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
@@ -40,6 +43,12 @@
 
 .css-kzf2d7-MuiInputBase-root-MuiOutlinedInput-root {
     border-radius: 0px !important;
+}
+
+.clicked {
+    background-color: rgba(85, 85, 85, 0.4) !important;
+    font-weight: 900 !important;
+    color: orange !important;
 }
 
 .App-header {
@@ -59,18 +68,6 @@
 
 #companies {
     border-radius: 15px 0px 0px 15px !important;
-}
-
-.pop-search {
-    background-color: rgba(128, 128, 128, 0.4) !important;
-    color: rgba(255, 255, 255, 1) !important;
-}
-
-.pop-search:active {
-    width: 110%;
-    height: 10%;
-    white-space: nowrap;
-    font-size: 80% !important;
 }
 
 #search-button {
