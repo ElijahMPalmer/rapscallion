@@ -40,6 +40,30 @@ app.get("/login", (req, res) => {
     });
 });
 
+app.post("/users", async(req, res) => {
+    try {
+        const { first_name, last_name, username, passkey } = req.body;
+        const newUser = await pool.query(
+            `INSERT INTO users (first_name, last_name, username, passkey) VALUES ($1,$2,$3,$4) RETURNING *`, [first_name, last_name, username, passkey]
+        );
+        res.status(201).json(newUser.rows[0]);
+    } catch (err) {
+        console.error(err.message);
+    }
+});
+
+
+app.delete("/users/:id?", async(req, res) => {
+    try {
+        const id = req.params.id;
+        const newQuiz = await pool.query(
+            "DELETE from users WHERE users_id = $1 RETURNING *", [id]
+        );
+        res.status(200).json(newQuiz.rows);
+    } catch (err) {
+        console.error(err.message);
+    }
+});
 app.get("/login/:username/:passkey", (req, res) => {
     res.send("Hello World!");
 });
