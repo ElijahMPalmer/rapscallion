@@ -18,9 +18,7 @@ function App() {
   })
   return (
     <div >
-  hello
     <Header/>
-
     </div>
   );
 }
