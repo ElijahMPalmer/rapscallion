@@ -1,5 +1,5 @@
 import React from "react";
-import Signin from "./Signin";
+import Signup from "./Signup";
 
 const Header = () => {
     return (
@@ -8,8 +8,7 @@ const Header = () => {
         <div className="heading">
             <div className="logo-container">
             <div id="rap-logo"><h1>RAPSCALLION</h1></div>
-            <Signin />
-            {/* <Login /> */}
+            <Signup />
             </div>
             <div className="HeaderLinks"> 
             <div className="left-links">
