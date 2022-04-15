@@ -22,6 +22,7 @@ function App() {
     <div >
     <Header />
     <Home />
+    <Job />
     </div>
   );
 }
