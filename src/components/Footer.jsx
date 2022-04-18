@@ -28,6 +28,7 @@ function Footer() {
   const [openFeedback, setOpenFeedback] = useState(false);
   const [name, setName] = useState('');
   const [feedBack, setFeedBack] = useState('');
+  const [emailSent, setEmailSent] = useState(false);
   const handleOpenFeedback = () => {
     setOpenFeedback(true);
   };
@@ -119,7 +120,10 @@ function Footer() {
             className="form-in-sign-up" 
             onSubmit={function(e){
                 e.preventDefault();
-                console.log('this is the state', name, feedBack)}}>
+                console.log('this is the state', name, feedBack)
+                setEmailSent('true');
+            }}>
+                
               <TextField 
               id="outlined" 
               label="Name" 
@@ -146,9 +150,16 @@ function Footer() {
               />
               <br />
               {/* onClick={handleClick()} */}
-              <Button id="signup-btn" variant="contained" type="submit" >
+              
+              <Button 
+              id="signup-btn" 
+              variant="contained" 
+              type="submit" 
+              // onSubmit={}
+              >
                 Submit
               </Button>
+              {emailSent ? <Alert severity="success">Feedback sent! Thank you for your support!</Alert> : <p></p>}
             </form>
           </Box>
         </Box>
