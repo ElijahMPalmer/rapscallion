@@ -11,6 +11,8 @@ import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
 import Alert from '@mui/material/Alert';
 
+
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -87,9 +89,9 @@ function Footer() {
           <Column>
             <Content>
               <h3>Contact Us</h3>
-              <h5>
-                <a onClick={handleOpenFeedback}>Let us know how we're doing!</a>
-              </h5>
+              <Button className="footer-button" variant="text" onClick={handleOpenFeedback}>
+                Let us know how we're doing!
+              </Button>
             </Content>
           </Column>
         
@@ -103,7 +105,10 @@ function Footer() {
             <h3>Created By</h3>
           </Content>
         </Column>
+        
       </Row>
+      <Content>Inspired by: Monster.com</Content>
+      <Content>Copyright © 2022, Rapscallion, Inc. "Rapscallion" and logo are registered trademarks of Rapscallion, Inc</Content>
       {/* Start of Modal */}
       <Modal
         aria-labelledby="simple-modal-title"
@@ -161,6 +166,7 @@ function Footer() {
               </Button>
               {emailSent ? <Alert severity="success">Feedback sent! Thank you for your support!</Alert> : <p></p>}
             </form>
+            
           </Box>
         </Box>
       </Modal>
@@ -224,4 +230,20 @@ const Content = styled.div`
 // https://www.linkedin.com/in/elijah-palmer/
 // https://www.linkedin.com/in/trevor-mulvany/
 
+// https://github.com/anjali-th
+// https://github.com/ElijahMPalmer
+// https://github.com/waterpolo509
+// https://github.com/natanrinconluna
+
 // EMAIL FOR FEEDBACK FORM -----> rapscallionfeedback@gmail.com
+
+// ADD REVIEW TAG ON COMPLETED TASKS FOR GROUP REVIEW
+// ADDITIONS / FIXES TO FOOTER NOTE 04/19/22:
+
+
+// 1. CURSOR POINTER FOR FEEDBACK FORM BUTTON REVIEW
+// 2. UNDER "CHECK OUT REST OF OUR WORK" ---> 1. GITHUB REPO OF THIS PROJECT AS WELL AS LINK PROFILES OF ALL GROUP MEMBERS
+
+// 3. 4TH COLUMN ----> HELPFUL RESOURCES: 1. INDEED.COM //// 2. GLASSDOOR.COM
+// 4. VERY BOTTOM OF FOOTER ---> INSPIRED BY: MONSTER.COM //// Copyright © 2022, Rapscallion, Inc. "Rapscallion" and logo are registered trademarks of Rapscallion, Inc REVIEW 
+// 5. ABOUT US UNDER CONTACT US SECTION 

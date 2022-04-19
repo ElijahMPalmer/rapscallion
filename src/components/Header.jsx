@@ -7,7 +7,7 @@ const Header = () => {
         
         <div className="heading">
             <div className="logo-container">
-            <div id="rap-logo"><h1>RAPSCALLION</h1></div>
+            <div id="rap-logo" ><h1>RAPSCALLION</h1></div>
             <Signup />
             </div>
             <div className="HeaderLinks"> 
