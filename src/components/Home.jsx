@@ -9,6 +9,7 @@ import Grid from "@mui/material/Grid";
 import styled from "styled-components";
 import axios from "axios";
 import JobCard from "./JobCard";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
 const Home = () => {
   const [search, setSearch] = useState("");
@@ -100,11 +101,14 @@ const Home = () => {
         </Container>
 
         {results[0] ? (
-          <Carousel>
-            <JobCard
-             results={results}
+          <JobWindow>
+            <Carousel>
+              <JobCard results={results} />
+            </Carousel>
+            <CloseButton 
+              onClick={() => setResults([])}
             />
-          </Carousel>
+          </JobWindow>
         ) : (
           <>
             <h4>Popular Searches</h4>
@@ -223,4 +227,20 @@ const Carousel = styled.div`
   align-items: center;
   overflow-x: auto;
   overflow-y: hidden;
+  width: 1300px;
+`;
+
+const JobWindow = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const CloseButton = styled(ExpandLessIcon)`
+  margin: 0 auto;
+  font-size: 60px;
+  cursor: pointer;
+  color: white;
+  animation: animateDown infinite 1.5s;
 `;
