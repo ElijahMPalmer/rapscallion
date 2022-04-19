@@ -8,11 +8,13 @@ import SearchIcon from "@mui/icons-material/Search";
 import Grid from "@mui/material/Grid";
 import styled from "styled-components";
 import axios from "axios";
+import JobCard from "./JobCard";
 
 const Home = () => {
   const [search, setSearch] = useState("");
   const [location, setLocation] = useState("");
   const [isSearch, setIsSearch] = useState(false);
+  const [results, setResults] = useState([]);
 
   function handleClick(e) {
     console.log("It worked");
@@ -32,6 +34,7 @@ const Home = () => {
       )
       .then(function (response) {
         console.log("This is the API response", response);
+        setResults(response.data.SearchResult.SearchResultItems);
       });
   }
 
@@ -43,62 +46,65 @@ const Home = () => {
         </div>
         <Container>
           <form
-            className='search-form'
+            className="search-form"
             onSubmit={function (e) {
               e.preventDefault();
               getJobs();
               setIsSearch(true);
             }}
           >
-              
-          <TextField
-            InputProps={{
-              sx: { borderRadius: "8px 0px 0px 8px" }
-            }}
-            id="outlined-basic companies"
-            placeholder="Search jobs, keywords or companies"
-            variant="outlined"
-            sx={{
-              backgroundColor: "white",
-              borderRadius: "8px 0px 0px 8px",
-              width: "400px",
-            }}
-            onChange={function (e) {
-              setSearch(e.target.value);
-            }}
-          />
-          <TextField
-            InputProps={{
-              sx: { borderRadius: "0px 0px 0px 0px" }
-            }}
-            id="outlined-basic locations"
-            placeholder="Enter location"
-            variant="outlined"
-            sx={{
-              backgroundColor: "white",
-              borderRadius: "0px 0px 0px 0px",
-              width: "400px",
-            }}
-          />
+            <TextField
+              InputProps={{
+                sx: { borderRadius: "8px 0px 0px 8px" },
+              }}
+              id="outlined-basic companies"
+              placeholder="Search jobs, keywords or companies"
+              variant="outlined"
+              sx={{
+                backgroundColor: "white",
+                borderRadius: "8px 0px 0px 8px",
+                width: "400px",
+              }}
+              onChange={function (e) {
+                setSearch(e.target.value);
+              }}
+            />
+            <TextField
+              InputProps={{
+                sx: { borderRadius: "0px 0px 0px 0px" },
+              }}
+              id="outlined-basic locations"
+              placeholder="Enter location"
+              variant="outlined"
+              sx={{
+                backgroundColor: "white",
+                borderRadius: "0px 0px 0px 0px",
+                width: "400px",
+              }}
+            />
 
-          <ButtonGroup>
-            <Button
-              id="search-button"
-              alignItems="right"
-              justifyContent="right"
-              startIcon={<SearchIcon />}
-              variant="contained"
-              color="success"
-              type="submit"
-            >
-              Search
-            </Button>
-          </ButtonGroup>
+            <ButtonGroup>
+              <Button
+                id="search-button"
+                alignItems="right"
+                justifyContent="right"
+                startIcon={<SearchIcon />}
+                variant="contained"
+                color="success"
+                type="submit"
+              >
+                Search
+              </Button>
+            </ButtonGroup>
           </form>
         </Container>
 
-        {isSearch ? (
-          <div></div>
+        {results[0] ? (
+          <Carousel>
+            <JobCard
+             results={results}
+            />
+          </Carousel>
         ) : (
           <>
             <h4>Popular Searches</h4>
@@ -115,7 +121,7 @@ const Home = () => {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  Work From Home
+                  Remote Work
                 </Button>
                 <Button
                   variant="contained"
@@ -128,7 +134,7 @@ const Home = () => {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  Galvanize
+                  Education
                 </Button>
                 <Button
                   variant="contained"
@@ -141,7 +147,7 @@ const Home = () => {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  Software Engineering
+                  Software Development
                 </Button>
                 <Button
                   variant="contained"
@@ -154,7 +160,7 @@ const Home = () => {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  Something
+                  Finance
                 </Button>
                 <Button
                   variant="contained"
@@ -173,7 +179,6 @@ const Home = () => {
             </PopularGroup>
           </>
         )}
-            
       </main>
     </div>
   );
@@ -209,4 +214,13 @@ const ButtonGroup = styled.div`
   flex-direction: row;
   justify-content: right;
   align-items: right;
+`;
+
+const Carousel = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
 `;
