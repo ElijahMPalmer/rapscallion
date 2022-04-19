@@ -160,6 +160,19 @@
     .pop-search .css-i4bv87-MuiSvgIcon-root {
         fill: orange !important;
     }
+
+    .footer-button {
+        cursor: pointer;
+        text-transform: none;
+        margin: 0;
+        padding: 0;
+        color: black;
+        font-weight: bold;
+    }
+
+    .footer-button:hover {
+        background-color: transparent;
+    }
     
     @keyframes App-logo-spin {
         from {

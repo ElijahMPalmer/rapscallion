@@ -104,6 +104,7 @@ export default function Signup() {
               {/*  form 1 */}
                 <form className="form-in-sign-up" onSubmit={formSubmitSignup}>
                   <TextField
+                    fullWidth
                     required
                     id="outlined"
                     label="Create Username"
@@ -114,6 +115,7 @@ export default function Signup() {
                   <br />
                   <TextField
                     required
+                    fullWidth
                     id="outlined-password-input"
                     label="Create New Password"
                     type="password"
@@ -144,6 +146,7 @@ export default function Signup() {
                 <form className="form-in-sign-up" onSubmit={formSubmitLogin}>
                   <TextField
                     required
+                    fullWidth
                     id="outlined"
                     label="Username"
                     margin="normal"
@@ -153,6 +156,7 @@ export default function Signup() {
                   <br />
                   <TextField
                     required
+                    fullWidth
                     id="outlined-password-input"
                     label="Password"
                     type="password"

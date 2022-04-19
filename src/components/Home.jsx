@@ -10,7 +10,7 @@ import styled from "styled-components";
 
 const Home = () => {
 
-  function handleClick(e){
+  function handleClick(e) {
     console.log("It worked")
     e.target.classList.toggle("clicked");
   }
@@ -23,10 +23,12 @@ const Home = () => {
         </div>
         <Container>
           <TextField
+            InputProps={{
+              sx: { borderRadius: "8px 0px 0px 8px" }
+            }}
             id="outlined-basic companies"
-            label="Search Jobs, keywords, companies"
+            placeholder="Search jobs, keywords or companies"
             variant="outlined"
-            color="success"
             sx={{
               backgroundColor: "white",
               borderRadius: "8px 0px 0px 8px",
@@ -34,10 +36,12 @@ const Home = () => {
             }}
           />
           <TextField
+            InputProps={{
+              sx: { borderRadius: "0px 0px 0px 0px" }
+            }}
             id="outlined-basic locations"
-            label="Enter Location"
+            placeholder="Enter location"
             variant="outlined"
-            color="success"
             sx={{
               backgroundColor: "white",
               borderRadius: "0px 0px 0px 0px",
@@ -59,7 +63,7 @@ const Home = () => {
           </ButtonGroup>
         </Container>
 
-          <h4>Popular Searches</h4>
+        <h4>Popular Searches</h4>
         <PopularGroup>
           <PopularSearch>
             <Button
@@ -73,7 +77,7 @@ const Home = () => {
                 whiteSpace: "nowrap"
               }}
             >
-              Work From Home
+              remote work
             </Button>
             <Button
               variant="contained"
@@ -86,7 +90,7 @@ const Home = () => {
                 whiteSpace: "nowrap"
               }}
             >
-              Galvanize
+              education
             </Button>
             <Button
               variant="contained"
@@ -99,7 +103,7 @@ const Home = () => {
                 whiteSpace: "nowrap"
               }}
             >
-              Software Engineering
+              Technology
             </Button>
             <Button
               variant="contained"
@@ -112,7 +116,7 @@ const Home = () => {
                 whiteSpace: "nowrap"
               }}
             >
-              contained
+              finance
             </Button>
             <Button
               variant="contained"
@@ -125,7 +129,7 @@ const Home = () => {
                 whiteSpace: "nowrap"
               }}
             >
-              Outlined
+              real estate
             </Button>
           </PopularSearch>
         </PopularGroup>
