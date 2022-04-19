@@ -10,15 +10,6 @@ import React from 'react';
 
 function App() {
 
-  axios.get('https://data.usajobs.gov/api/search', {
-    headers: {
-      'Authorization-Key': 'RfNibr7lLoJZ9SKS6mJShB2MUCLGW2Zuza31kkb9swM='
-    }
-  })
-  .then(function (response) {
-    console.log(response)
-    
-  })
   return (
     <div >
     <Header />
