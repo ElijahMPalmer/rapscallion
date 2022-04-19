@@ -157,6 +157,11 @@
         background-color: gray !important;
     }
     
+    .search-form {
+        display: flex;
+        flex-direction: row;
+    }
+    
     .pop-search .css-i4bv87-MuiSvgIcon-root {
         fill: orange !important;
     }
