@@ -31,6 +31,10 @@
         padding: 1em;
         width: 63%;
     }
+
+    #rap-logo a{
+        color: #2980b9;
+    }
     
     .UserButtons {
         display: flex;
@@ -62,7 +66,7 @@
         color: black;
         display: flex;
         font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
-        padding-right: 4.7em;
+        padding-right: 3.5em;
     }
     
     #ForEmployers {
@@ -72,7 +76,7 @@
     }
     
     #ForEmployers a {
-        padding-right: 0;
+        padding-right: 1em;
     }
     
     .compat-container {

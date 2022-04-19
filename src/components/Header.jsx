@@ -1,5 +1,5 @@
 import React from "react";
-import Signin from "./Signin";
+import Signup from "./Signup";
 
 const Header = () => {
     return (
@@ -7,20 +7,19 @@ const Header = () => {
         
         <div className="heading">
             <div className="logo-container">
-            <div id="rap-logo"><h1>RAPSCALLION</h1></div>
-            <Signin />
-            {/* <Login /> */}
+            <div id="rap-logo"><a href="/"><h1>RAPSCALLION</h1></a></div>
+            <Signup />
             </div>
             <div className="HeaderLinks"> 
             <div className="left-links">
-            <a href="https://www.petmd.com/sites/default/files/styles/article_image/public/2657457178_b9907d2e64.jpg?itok=hBsJNuKL">Find Jobs</a>
-            <a href="https://www.petmd.com/sites/default/files/styles/article_image/public/2657457178_b9907d2e64.jpg?itok=hBsJNuKL">Salary Tools</a>
-            <a href="https://www.petmd.com/sites/default/files/styles/article_image/public/2657457178_b9907d2e64.jpg?itok=hBsJNuKL">Career Advice</a>
-            <a href="https://www.petmd.com/sites/default/files/styles/article_image/public/2657457178_b9907d2e64.jpg?itok=hBsJNuKL">For Employers</a>
-            <a href="https://www.petmd.com/sites/default/files/styles/article_image/public/2657457178_b9907d2e64.jpg?itok=hBsJNuKL">Upload Resume</a>
+            <a href="https://www.vacareers.va.gov/">Veteran Careers</a>
+            <a href="https://www.governmentjobs.com/">Goverment Jobs</a>
+            <a href="https://www.salary.com/">Salary Tools</a>
+            <a href="https://www.thebalancecareers.com/career-advice-4161933">Career Advice</a>
+            <a href="https://www.resumehelp.com/">Resume Help</a>
             </div>
             <div id="ForEmployers">
-            <a href="https://www.petmd.com/sites/default/files/styles/article_image/public/2657457178_b9907d2e64.jpg?itok=hBsJNuKL">For Employers    →</a>
+            <a href="https://www.collegesimply.com/colleges-near/">Find a School Near me    →</a>
             </div>
             </div>
         </div>
