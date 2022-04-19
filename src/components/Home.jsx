@@ -89,6 +89,7 @@ const Home = () => {
               startIcon={<SearchIcon />}
               variant="contained"
               color="success"
+              type="submit"
             >
               Search
             </Button>
