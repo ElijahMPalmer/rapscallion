@@ -50,50 +50,52 @@ const Home = () => {
               setIsSearch(true);
             }}
           >
-            <TextField
-              id="outlined-basic companies"
-              label="Search Jobs, keywords, companies"
-              variant="outlined"
-              color="success"
-              onChange={function (e) {
-                setSearch(e.target.value);
-              }}
-              sx={{
-                backgroundColor: "white",
-                borderRadius: "8px 0px 0px 8px",
-                width: "400px",
-              }}
-            />
-            <TextField
-              id="outlined-basic locations"
-              label="Enter Location"
-              variant="outlined"
-              color="success"
-              onChange={function (e) {
-                setLocation(e.target.value);
-              }}
-              sx={{
-                backgroundColor: "white",
-                borderRadius: "0px 0px 0px 0px",
-                width: "400px",
-              }}
-            />
+              
+          <TextField
+            InputProps={{
+              sx: { borderRadius: "8px 0px 0px 8px" }
+            }}
+            id="outlined-basic companies"
+            placeholder="Search jobs, keywords or companies"
+            variant="outlined"
+            sx={{
+              backgroundColor: "white",
+              borderRadius: "8px 0px 0px 8px",
+              width: "400px",
+            }}
+            onChange={function (e) {
+              setSearch(e.target.value);
+            }}
+          />
+          <TextField
+            InputProps={{
+              sx: { borderRadius: "0px 0px 0px 0px" }
+            }}
+            id="outlined-basic locations"
+            placeholder="Enter location"
+            variant="outlined"
+            sx={{
+              backgroundColor: "white",
+              borderRadius: "0px 0px 0px 0px",
+              width: "400px",
+            }}
+          />
 
-            <ButtonGroup>
-              <Button
-                id="search-button"
-                alignItems="right"
-                justifyContent="right"
-                startIcon={<SearchIcon />}
-                variant="contained"
-                color="success"
-                type="submit"
-              >
-                Search
-              </Button>
-            </ButtonGroup>
+          <ButtonGroup>
+            <Button
+              id="search-button"
+              alignItems="right"
+              justifyContent="right"
+              startIcon={<SearchIcon />}
+              variant="contained"
+              color="success"
+            >
+              Search
+            </Button>
+          </ButtonGroup>
           </form>
         </Container>
+
         {isSearch ? (
           <div></div>
         ) : (
@@ -151,7 +153,7 @@ const Home = () => {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  contained
+                  Something
                 </Button>
                 <Button
                   variant="contained"
@@ -164,12 +166,13 @@ const Home = () => {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  Outlined
+                  Real Estate
                 </Button>
               </PopularSearch>
             </PopularGroup>
           </>
         )}
+            
       </main>
     </div>
   );

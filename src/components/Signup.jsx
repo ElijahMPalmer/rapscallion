@@ -1,4 +1,5 @@
 import * as React from "react";
+import axios from 'axios';
 import { useState } from "react";
 import { Button, Modal, Box, Stack, TextField } from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -34,6 +35,55 @@ export default function Signup() {
     setOpenLogin(false);
   }
 
+  // handlle form submit
+
+  const [username, setusername] = useState("");
+  const [password, setpassword] = useState("");
+
+  function recordUsername(value){
+    setusername(()=> value);
+  }
+  function recordPassword(value){
+    setpassword(()=> value);
+  }
+ 
+  function formSubmitSignup(e){
+    e.preventDefault();
+    console.log(username, password);
+    setOpenSignup(false);
+
+    //  post request
+    axios.post(`http://localhost:4000/users`, {
+      username: username,
+      passkey: password
+    })
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+  function formSubmitLogin(e){
+    e.preventDefault();
+    console.log(username, password);
+    setOpenLogin(false);
+
+    // get request
+    axios.get(`http://localhost:4000/${username}/${password}`,{
+      mode: 'cors'
+    })  
+    .then(function (response) {
+    console.log(response.data);
+    })
+    .catch(function(error) {
+      console.log(error);
+    })
+    
+
+  }
+
   return (
     <div className="UserButtons">
       <Stack direction="row" spacing={2}>
@@ -51,17 +101,25 @@ export default function Signup() {
                 <h3>Are you new?</h3>
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <form className="form-in-sign-up">
+              {/*  form 1 */}
+                <form className="form-in-sign-up" onSubmit={formSubmitSignup}>
                   <TextField
+                    fullWidth
+                    required
                     id="outlined"
                     label="Create Username"
                     margin="normal"
+                    type="text"
+                    onChange={(e)=> {recordUsername(e.target.value)}}
                   />
                   <br />
                   <TextField
+                    required
+                    fullWidth
                     id="outlined-password-input"
                     label="Create New Password"
                     type="password"
+                    onChange={(e)=> {recordPassword(e.target.value)}}
                   />
                   <br />
                   <Button id="signup-btn" variant="contained" type="submit">
@@ -85,17 +143,24 @@ export default function Signup() {
                 <h3>Welcome Back!</h3>
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <form className="form-in-sign-up">
+                <form className="form-in-sign-up" onSubmit={formSubmitLogin}>
                   <TextField
+                    required
+                    fullWidth
                     id="outlined"
                     label="Username"
                     margin="normal"
+                    type="text"
+                    onChange={(e)=> {recordUsername(e.target.value)}}
                   />
                   <br />
                   <TextField
+                    required
+                    fullWidth
                     id="outlined-password-input"
                     label="Password"
                     type="password"
+                    onChange={(e)=> {recordPassword(e.target.value)}}
                   />
                   <br />
                   <Button id="signup-btn" variant="contained" type="submit">
