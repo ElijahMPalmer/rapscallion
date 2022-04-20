@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -14,19 +14,35 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 const Home = () => {
   const [search, setSearch] = useState("");
   const [location, setLocation] = useState("");
-  const [isSearch, setIsSearch] = useState(false);
   const [results, setResults] = useState([]);
+  const [userLocation, setUserLocation] = useState('');
 
-  function handleClick(e) {
+  useEffect(() => {
+    axios.get(`https://api.getgeoapi.com/v2/ip/check?api_key=9be900500e43cd3c2c74e989ae0b91f5079af280`)
+    .then(function (response) {
+        console.log("This one", response);
+        setUserLocation(`${response.data.city.name}, ${response.data.area.name}`);
+      });
+  },[])
+
+  async function handleClick(e, callback) {
     console.log("It worked");
     e.target.classList.toggle("clicked");
+    setSearch(e.target.innerText);
+    await setLocation(userLocation)
+    callback();
+    //getJobs();
+  }
+
+  function logResult(){
+    console.log("This is the location log", location);
   }
 
   function getJobs() {
     console.log("This is the Search and Location", search, location);
     axios
       .get(
-        `https://data.usajobs.gov/api/search?Keyword=${search}&LocationName=${location}&ResultsPerPage=100`,
+        `https://data.usajobs.gov/api/search?Keyword=${search}&LocationName=${location ? location : userLocation}&ResultsPerPage=100`,
         {
           headers: {
             "Authorization-Key": "RfNibr7lLoJZ9SKS6mJShB2MUCLGW2Zuza31kkb9swM=",
@@ -51,7 +67,6 @@ const Home = () => {
             onSubmit={function (e) {
               e.preventDefault();
               getJobs();
-              setIsSearch(true);
             }}
           >
             <TextField
@@ -81,6 +96,9 @@ const Home = () => {
                 backgroundColor: "white",
                 borderRadius: "0px 0px 0px 0px",
                 width: "400px",
+              }}
+              onChange={function (e) {
+                setLocation(e.target.value);
               }}
             />
 
@@ -118,14 +136,14 @@ const Home = () => {
                   variant="contained"
                   className="pop-search"
                   startIcon={<SearchIcon />}
-                  onClick={(e) => handleClick(e)}
+                  onClick={(e) => handleClick(e, logResult)}
                   sx={{
                     backgroundColor: "rgba(128, 128, 128, 0.4)",
                     color: "rgba(255, 255, 255, 1)",
                     whiteSpace: "nowrap",
                   }}
                 >
-                  Remote Work
+                  Law Enforcement
                 </Button>
                 <Button
                   variant="contained"
@@ -138,7 +156,7 @@ const Home = () => {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  Education
+                  Teacher
                 </Button>
                 <Button
                   variant="contained"
@@ -164,7 +182,7 @@ const Home = () => {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  Finance
+                  Fire Fighter
                 </Button>
                 <Button
                   variant="contained"
@@ -228,6 +246,7 @@ const Carousel = styled.div`
   overflow-x: auto;
   overflow-y: hidden;
   width: 1300px;
+  
 `;
 
 const JobWindow = styled.div`

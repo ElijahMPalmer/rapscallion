@@ -6,6 +6,28 @@
         background-color: white;
     }
     /* header */
+    /* width */
+    
+     ::-webkit-scrollbar {
+        width: 20px;
+    }
+    /* Track */
+    
+     ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px orange;
+        border-radius: 10px;
+    }
+    /* Handle */
+    
+     ::-webkit-scrollbar-thumb {
+        background: rgb(164, 164, 164);
+        border-radius: 10px;
+    }
+    /* Handle on hover */
+    
+     ::-webkit-scrollbar-thumb:hover {
+        background: rgb(126, 126, 126);
+    }
     
     .heading {
         width: 100%;
@@ -34,6 +56,7 @@
     
     #rap-logo a {
         color: #2980b9;
+        text-decoration: none;
     }
     
     .UserButtons {
@@ -61,12 +84,16 @@
         display: flex;
     }
     
-    a {
+    .left-links a {
         text-decoration: none;
         color: black;
         display: flex;
         font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
         padding-right: 3.5em;
+    }
+    
+    .left-links a:hover {
+        border-bottom: orange;
     }
     
     #ForEmployers {
@@ -76,7 +103,9 @@
     }
     
     #ForEmployers a {
+        text-decoration: none;
         padding-right: 1em;
+        color: black;
     }
     
     .compat-container {

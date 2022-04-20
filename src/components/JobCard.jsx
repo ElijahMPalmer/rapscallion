@@ -27,17 +27,21 @@ function jobCard({ results }) {
       {results.map((item, index) => (
         <Card key={index}>
           <h3>{item.MatchedObjectDescriptor.PositionTitle}</h3>
+          <h4>{item.MatchedObjectDescriptor.PositionLocationDisplay}</h4>
           <h4>{`$${Math.round(
             item.MatchedObjectDescriptor.PositionRemuneration[0]
               .MinimumRange
-          )} - $${Math.round(
+          ).toLocaleString()} - $${Math.round(
             item.MatchedObjectDescriptor.PositionRemuneration[0]
               .MaximumRange
-          )}`}</h4>
+          ).toLocaleString()}`}</h4>
           <section>
             <p>{item.MatchedObjectDescriptor.QualificationSummary}</p>
           </section>
-          <a href={item.MatchedObjectDescriptor.PositionURI}>Apply Here!</a>
+          <Button
+          variant='outlined'
+          ><a target='_blank' href={item.MatchedObjectDescriptor.PositionURI}>Apply Here!</a>
+          </Button>
         </Card>
       ))}
     </>
@@ -49,20 +53,45 @@ export default jobCard;
 const Card = styled.div`
   background-color: white;
   color: black;
-  min-width: 345px;
-  width: 345px;
-  height: 425px;
+  min-width: 400px;
+  width: 400px;
+  height: 475px;
   padding: 25px;
   margin: 25px 15px;
   border-radius: 8px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  a{
+    padding: 0;
+    text-decoration: none;
+    color: black;
+  }
 
   section {
     height: 250px;
     overflow-y: auto;
+    margin-bottom: 
+  }
+
+  Button{
+   width: 140px;
+   height: 50px !important;
+   margin: 0 auto;
+   margin-top: 20px;
+  }
+
+  h3{
+    font-size: 90%;
+    height: 45px;
+    margin: 12px 0; 
   }
 
   h4 {
     color: black !important;
+    margin: 10px 0;
   }
 `;
+
