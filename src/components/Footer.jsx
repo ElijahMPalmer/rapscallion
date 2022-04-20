@@ -10,8 +10,8 @@ import styled from "styled-components";
 import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
 import Alert from "@mui/material/Alert";
-import Popper from '@mui/material/Popper';
-import Fade from '@mui/material/Fade';
+import Popper from "@mui/material/Popper";
+import Fade from "@mui/material/Fade";
 
 const style = {
   position: "absolute",
@@ -31,6 +31,8 @@ function Footer() {
   const [name, setName] = useState("");
   const [feedBack, setFeedBack] = useState("");
   const [emailSent, setEmailSent] = useState(false);
+  const [open, setOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
   const handleOpenFeedback = () => {
     setOpenFeedback(true);
   };
@@ -38,7 +40,13 @@ function Footer() {
   const handleCloseFeedback = () => {
     setOpenFeedback(false);
   };
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+    setOpen((previousOpen) => !previousOpen);
+  };
 
+  const canBeOpen = open && Boolean(anchorEl);
+  const id = canBeOpen ? "transition-popper" : undefined;
   return (
     <Container>
       <h2>
@@ -95,7 +103,21 @@ function Footer() {
               onClick={handleOpenFeedback}
             >
               Let us know how we're doing!
-            </Button>       
+            </Button>
+            <div>
+            <Button className="footer-button" aria-describedby={id} type="button" onClick={handleClick}>
+              About Us
+            </Button>
+            <Popper id={id} open={open} anchorEl={anchorEl} transition>
+              {({ TransitionProps }) => (
+                <Fade {...TransitionProps} timeout={350}>
+                  <Box sx={{ border: 1, p: 1, bgcolor: "background.paper" }}>
+                    Rapscallion was created by four aspiring software engineers with a vision of creating the world's greatest job finding website. We hope you enjoy it as much as we enjoyed making it!
+                  </Box>
+                </Fade>
+              )}
+            </Popper>
+            </div>
           </Content>
         </Column>
 
