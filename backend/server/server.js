@@ -79,9 +79,9 @@ app.get("/login/:username/:passkey", async(req, res) => {
     try {
         pool.query('SELECT * FROM users WHERE username = $1', [username], async(err, result) => {
             if (await bcrypt.compare(passkey, result.rows[0].passkey)) {
-                console.log('Logged In')
+                res.send('Logged In')
             } else {
-                console.log('Access Denied')
+                res.send('Access Denied')
             }
 
 
