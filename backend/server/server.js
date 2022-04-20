@@ -6,7 +6,7 @@ const cors = require("cors");
 const port = 4000;
 
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 const pool = new Pool({
@@ -45,9 +45,10 @@ app.get("/", async(req, res) => {
 
 app.post("/users", async(req, res) => {
     try {
-        const {username, passkey } = req.body;
+        const { username, passkey } = req.body;
+        const hashedPassword = await bcrypt.hash(passkey, 10)
         const newUser = await pool.query(
-            `INSERT INTO users (username, passkey) VALUES ($1,$2) RETURNING *`, [username, passkey]
+            `INSERT INTO users (username, passkey) VALUES ($1,$2) RETURNING *`, [username, hashedPassword]
         );
         res.status(201).json(newUser.rows[0]);
     } catch (err) {
@@ -67,23 +68,26 @@ app.delete("/users/:id?", async(req, res) => {
         console.error(err.message);
     }
 });
-app.get("/login/:username/:passkey", (req, res) => {
-    res.send("Hello World!");
-});
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
 
 //dummy
-app.get("/:username/:passkey", (req, res) => {
+app.get("/login/:username/:passkey", async(req, res) => {
     const { username, passkey } = req.params
- 
-    pool.query( 'SELECT * FROM users WHERE username = $1 AND passkey= $2' , [username, passkey], (err, result)=>{
-        if (err){
-            res.sendStatus(500);
-        }else{
-            res.send(result.rows);
-        }
-    })
+    try {
+        pool.query('SELECT * FROM users WHERE username = $1', [username], async(err, result) => {
+            if (await bcrypt.compare(passkey, result.rows[0].passkey)) {
+                res.send('Logged In')
+            } else {
+                res.send('Access Denied')
+            }
+
+
+        })
+    } catch {
+
+    }
+
 })

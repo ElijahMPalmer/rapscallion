@@ -9,9 +9,9 @@ import Grid from "@mui/material/Grid";
 import styled from "styled-components";
 import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
-import Alert from '@mui/material/Alert';
-
-
+import Alert from "@mui/material/Alert";
+import Popper from '@mui/material/Popper';
+import Fade from '@mui/material/Fade';
 
 const style = {
   position: "absolute",
@@ -28,8 +28,8 @@ const style = {
 
 function Footer() {
   const [openFeedback, setOpenFeedback] = useState(false);
-  const [name, setName] = useState('');
-  const [feedBack, setFeedBack] = useState('');
+  const [name, setName] = useState("");
+  const [feedBack, setFeedBack] = useState("");
   const [emailSent, setEmailSent] = useState(false);
   const handleOpenFeedback = () => {
     setOpenFeedback(true);
@@ -85,30 +85,78 @@ function Footer() {
               </a>
             </h5>
           </Content>
-          </Column>
-          <Column>
-            <Content>
-              <h3>Contact Us</h3>
-              <Button className="footer-button" variant="text" onClick={handleOpenFeedback}>
-                Let us know how we're doing!
-              </Button>
-            </Content>
-          </Column>
-        
+        </Column>
+        <Column>
+          <Content>
+            <h3>Contact Us</h3>
+            <Button
+              className="footer-button"
+              variant="text"
+              onClick={handleOpenFeedback}
+            >
+              Let us know how we're doing!
+            </Button>       
+          </Content>
+        </Column>
+
         <Column>
           <Content>
             <h3>Check out the rest of our work!</h3>
+            <h5>
+              Anjali Thing:{" "}
+              <a target="_blank" href="https://github.com/anjali-th">
+                GitHub
+              </a>
+            </h5>
+            <h5>
+              Trevor Mulvany:{" "}
+              <a target="_blank" href="https://github.com/waterpolo509">
+                GitHub
+              </a>
+            </h5>
+            <h5>
+              Elijah Palmer:{" "}
+              <a target="_blank" href="https://github.com/ElijahMPalmer">
+                GitHub
+              </a>
+            </h5>
+            <h5>
+              Natan Rincon Luna:{" "}
+              <a target="_blank" href="https://github.com/natanrinconluna">
+                GitHub
+              </a>
+            </h5>
           </Content>
         </Column>
         <Column>
           <Content>
-            <h3>Created By</h3>
+            <h3>Helpful Resources</h3>
+            <h5>
+              {" "}
+              <a target="_blank" href="https://www.glassdoor.com">
+                Glassdoor
+              </a>
+            </h5>
+            <h5>
+              {" "}
+              <a target="_blank" href="https://www.indeed.com">
+                Indeed
+              </a>
+            </h5>
+            <h5>
+              {" "}
+              <a target="_blank" href="https://www.monster.com">
+                Monster
+              </a>
+            </h5>
           </Content>
         </Column>
-        
       </Row>
       <Content>Inspired by: Monster.com</Content>
-      <Content>Copyright © 2022, Rapscallion, Inc. "Rapscallion" and logo are registered trademarks of Rapscallion, Inc</Content>
+      <Content>
+        Copyright © 2022, Rapscallion, Inc. "Rapscallion" and logo are
+        registered trademarks of Rapscallion, Inc
+      </Content>
       {/* Start of Modal */}
       <Modal
         aria-labelledby="simple-modal-title"
@@ -121,30 +169,34 @@ function Footer() {
             Welcome Back!
           </Typography>
           <Box id="modal-modal-description" sx={{ mt: 2 }}>
-            <form 
-            className="form-in-sign-up" 
-            onSubmit={function(e){
-                e.preventDefault();
-                console.log('this is the state', name, feedBack)
-                setEmailSent('true');
-            }}>
-                
-              <TextField 
-              id="outlined" 
-              label="Name" 
-              margin="normal"
-              onChange={function(e){
-                setName(e.target.value);
-            }}
+            <form
+              target="_blank"
+              action="https://formsubmit.co/b055a4df2cfd4d61e4dd62054a8d44c2"
+              method="POST"
+              className="form-in-sign-up"
+              onSubmit={function (e) {
+                console.log("this is the state", name, feedBack);
+                setEmailSent("true");
+              }}
+            >
+              <TextField
+                id="outlined"
+                name="name"
+                label="Name"
+                margin="normal"
+                onChange={function (e) {
+                  setName(e.target.value);
+                }}
               />
               <br />
               <TextField
                 id="outlined-multiline-static"
                 label="Give us your feedback!"
                 type="textarea"
+                name="message"
                 multiline
-                onChange={function(e){
-                    setFeedBack(e.target.value);
+                onChange={function (e) {
+                  setFeedBack(e.target.value);
                 }}
                 // size={large}
                 maxRows={4}
@@ -155,18 +207,23 @@ function Footer() {
               />
               <br />
               {/* onClick={handleClick()} */}
-              
-              <Button 
-              id="signup-btn" 
-              variant="contained" 
-              type="submit" 
-              // onSubmit={}
+
+              <Button
+                id="signup-btn"
+                variant="contained"
+                type="submit"
+                // onSubmit={}
               >
                 Submit
               </Button>
-              {emailSent ? <Alert severity="success">Feedback sent! Thank you for your support!</Alert> : <p></p>}
+              {emailSent ? (
+                <Alert severity="success">
+                  Feedback sent! Thank you for your support!
+                </Alert>
+              ) : (
+                <p></p>
+              )}
             </form>
-            
           </Box>
         </Box>
       </Modal>
@@ -240,10 +297,9 @@ const Content = styled.div`
 // ADD REVIEW TAG ON COMPLETED TASKS FOR GROUP REVIEW
 // ADDITIONS / FIXES TO FOOTER NOTE 04/19/22:
 
-
 // 1. CURSOR POINTER FOR FEEDBACK FORM BUTTON REVIEW
 // 2. UNDER "CHECK OUT REST OF OUR WORK" ---> 1. GITHUB REPO OF THIS PROJECT AS WELL AS LINK PROFILES OF ALL GROUP MEMBERS
 
 // 3. 4TH COLUMN ----> HELPFUL RESOURCES: 1. INDEED.COM //// 2. GLASSDOOR.COM
-// 4. VERY BOTTOM OF FOOTER ---> INSPIRED BY: MONSTER.COM //// Copyright © 2022, Rapscallion, Inc. "Rapscallion" and logo are registered trademarks of Rapscallion, Inc REVIEW 
-// 5. ABOUT US UNDER CONTACT US SECTION 
+// 4. VERY BOTTOM OF FOOTER ---> INSPIRED BY: MONSTER.COM //// Copyright © 2022, Rapscallion, Inc. "Rapscallion" and logo are registered trademarks of Rapscallion, Inc REVIEW
+// 5. ABOUT US UNDER CONTACT US SECTION

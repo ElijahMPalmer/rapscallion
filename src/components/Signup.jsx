@@ -1,5 +1,5 @@
 import * as React from "react";
-import axios from 'axios';
+import axios from "axios";
 import { useState } from "react";
 import { Button, Modal, Box, Stack, TextField } from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -18,7 +18,7 @@ const style = {
 };
 
 export default function Signup() {
-  const [openSignup, setOpenSignup] =useState(false);
+  const [openSignup, setOpenSignup] = useState(false);
   const handleOpenSignup = () => {
     setOpenSignup(true);
   };
@@ -29,65 +29,82 @@ export default function Signup() {
   const [openLogin, setOpenLogin] = useState(false);
   const handleOpenLogin = () => {
     setOpenLogin(true);
-  }
+  };
 
   const handleCloseLogin = () => {
     setOpenLogin(false);
-  }
+  };
 
   // handlle form submit
 
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
 
-  function recordUsername(value){
-    setusername(()=> value);
+  function recordUsername(value) {
+    setusername(() => value);
   }
-  function recordPassword(value){
-    setpassword(()=> value);
+  function recordPassword(value) {
+    setpassword(() => value);
   }
- 
-  function formSubmitSignup(e){
+
+  function formSubmitSignup(e) {
     e.preventDefault();
     console.log(username, password);
     setOpenSignup(false);
 
     //  post request
-    axios.post(`http://localhost:4000/users`, {
-      username: username,
-      passkey: password
-    })
-    .then(function (response) {
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    axios
+      .post(`http://localhost:4000/users`, {
+        username: username,
+        passkey: password,
+      })
+      .then(function (response) {
+        setLoggedIn(true);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
-  function formSubmitLogin(e){
+  function formSubmitLogin(e) {
     e.preventDefault();
     console.log(username, password);
     setOpenLogin(false);
 
     // get request
-    axios.get(`http://localhost:4000/${username}/${password}`,{
-      mode: 'cors'
-    })  
-    .then(function (response) {
-    console.log(response.data);
-    })
-    .catch(function(error) {
-      console.log(error);
-    })
-    
-
+    axios
+      .get(`http://localhost:4000/login/${username}/${password}`, {
+        mode: "cors",
+      })
+      .then(function (response) {
+        if(response.data === 'Logged In'){
+          setLoggedIn(true);
+        } else {
+          console.log(response, 'That wasnt right')
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   return (
     <div className="UserButtons">
-      <Stack direction="row" spacing={2}>
-          <Button variant="contained" color="primary" onClick={handleOpenSignup}>
+      {loggedIn ? (
+        <Stack direction="row" spacing={2}>
+          <h4>{`Hello, ${username}!`}</h4>
+          <Button variant="outlined" onClick={() => setLoggedIn(false)}>
+            Log Out
+          </Button> 
+        </Stack>
+      ) : (
+        <Stack direction="row" spacing={2}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleOpenSignup}
+          >
             Sign Up
           </Button>
           <Modal
@@ -101,7 +118,7 @@ export default function Signup() {
                 <h3>Are you new?</h3>
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              {/*  form 1 */}
+                {/*  form 1 */}
                 <form className="form-in-sign-up" onSubmit={formSubmitSignup}>
                   <TextField
                     fullWidth
@@ -110,7 +127,9 @@ export default function Signup() {
                     label="Create Username"
                     margin="normal"
                     type="text"
-                    onChange={(e)=> {recordUsername(e.target.value)}}
+                    onChange={(e) => {
+                      recordUsername(e.target.value);
+                    }}
                   />
                   <br />
                   <TextField
@@ -119,7 +138,9 @@ export default function Signup() {
                     id="outlined-password-input"
                     label="Create New Password"
                     type="password"
-                    onChange={(e)=> {recordPassword(e.target.value)}}
+                    onChange={(e) => {
+                      recordPassword(e.target.value);
+                    }}
                   />
                   <br />
                   <Button id="signup-btn" variant="contained" type="submit">
@@ -130,9 +151,9 @@ export default function Signup() {
             </Box>
           </Modal>
           <Button variant="outlined" onClick={handleOpenLogin}>
-          Log in
-        </Button>
-        <Modal
+            Log in
+          </Button>
+          <Modal
             aria-labelledby="simple-modal-title"
             aria-describedby="simple-modal-description"
             open={openLogin}
@@ -151,7 +172,9 @@ export default function Signup() {
                     label="Username"
                     margin="normal"
                     type="text"
-                    onChange={(e)=> {recordUsername(e.target.value)}}
+                    onChange={(e) => {
+                      recordUsername(e.target.value);
+                    }}
                   />
                   <br />
                   <TextField
@@ -160,17 +183,20 @@ export default function Signup() {
                     id="outlined-password-input"
                     label="Password"
                     type="password"
-                    onChange={(e)=> {recordPassword(e.target.value)}}
+                    onChange={(e) => {
+                      recordPassword(e.target.value);
+                    }}
                   />
                   <br />
                   <Button id="signup-btn" variant="contained" type="submit">
-                    Login 
+                    Login
                   </Button>
                 </form>
               </Typography>
             </Box>
           </Modal>
-      </Stack>
+        </Stack>
+      )}
     </div>
   );
 }
