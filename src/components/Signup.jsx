@@ -71,7 +71,7 @@ export default function Signup() {
     setOpenLogin(false);
 
     // get request
-    axios.get(`http://localhost:4000/${username}/${password}`,{
+    axios.get(`http://localhost:4000/login/${username}/${password}`,{
       mode: 'cors'
     })  
     .then(function (response) {
