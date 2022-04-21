@@ -50,7 +50,6 @@ export default function Signup() {
 
   function formSubmitSignup(e) {
     e.preventDefault();
-    console.log(username, password);
     setOpenSignup(false);
 
     //  post request
@@ -69,7 +68,6 @@ export default function Signup() {
 
   function formSubmitLogin(e) {
     e.preventDefault();
-    console.log(username, password);
     setOpenLogin(false);
 
     // get request
@@ -81,7 +79,6 @@ export default function Signup() {
         if(response.data === 'Logged In'){
           setLoggedIn(true);
         } else {
-          console.log(response, 'That wasnt right')
         }
       })
       .catch(function (error) {

@@ -1,64 +1,33 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
-import SearchIcon from "@mui/icons-material/Search";
-import Grid from "@mui/material/Grid";
 import styled from "styled-components";
 
 const Job = () => {
   return (
     <CallToAction>
       <main>
-    <Container>
-        <img src="images/callToAction.jpg" alt="" />
-        <ButtonGroup>
-          <h3>Finding a Job can be intimidating.</h3>
-          <h4>
-            <em>We</em> can help.
-          </h4>
-          <Button
-            className="sugg-button"
-            alignItems="right"
-            justifyContent="right"
-            variant="contained"
-            sx={{
-              backgroundColor: "rgba(128, 128, 128, 0.4)",
-              color: "rgba(255, 255, 255, 1)",
-              whiteSpace: "nowrap",
-            }}
-          >
-            Browse your recommended jobs
-          </Button>
-          <Button
-            className="sugg-button"
-            alignItems="right"
-            justifyContent="right"
-            variant="contained"
-            sx={{
-              backgroundColor: "rgba(128, 128, 128, 0.4)",
-              color: "rgba(255, 255, 255, 1)",
-              whiteSpace: "nowrap",
-            }}
-          >
-            Search jobs by salary range
-          </Button>
-          <Button
-            className="sugg-button"
-            alignItems="right"
-            justifyContent="right"
-            variant="contained"
-            sx={{
-              backgroundColor: "rgba(128, 128, 128, 0.4)",
-              color: "rgba(255, 255, 255, 1)",
-              whiteSpace: "nowrap",
-            }}
-          >
-            Explore for similar jobs in your area
-          </Button>
-        </ButtonGroup>
+        <Container>
+          <img src="images/callToAction.jpg" alt="" />
+          <ButtonGroup>
+            <h3>Finding a Job can be intimidating.</h3>
+            <h4>
+              <em>We</em> can help.
+            </h4>
+            <Box
+              id="job-qoute"
+              alignItems="right"
+              justifyContent="right"
+              variant="contained"
+            >
+              "Nothing in the world can take the place of persistence. Talent
+              will not; nothing is more common than unsuccessful men with
+              talent. Genius will not; unrewarded genius is almost a proverb.
+              Education will not; the world is full of educated derelicts.
+              Persistence and determination alone are omnipotent. The slogan
+              “press on” has solved and will always solve the problems of the
+              human race." — Calvin Coolidge
+            </Box>
+          </ButtonGroup>
         </Container>
       </main>
     </CallToAction>
@@ -99,3 +68,5 @@ const Container = styled.div`
   justify-content: space-evenly;
   align-items: center;
 `;
+
+const Content = styled.div``;
