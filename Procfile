@@ -1,0 +1,1 @@
+web: npm install && npm build && cd ./backend && npm install && npm start 
