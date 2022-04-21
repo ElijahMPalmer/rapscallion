@@ -55,4 +55,4 @@ and npm run start in the other terminal tab in the path "user:/rapscallion"
 1. GROUP LEAD --- [Elijah Palmer](https://www.linkedin.com/in/elijah-palmer/)
 2. ASSISTANT GROUP LEAD --- [Anjali Thing](https://www.linkedin.com/in/anjali-thing/)
 3. JUNIOR ENGINEER/PEASANT --- [Trevor Mulvany](https://www.linkedin.com/in/trevor-mulvany/)
-4. JUNIOR ENGINEER --- [Natan Rincon Luna](https://www.linkedin.com/in/natanrinconluna)
+4. JUNIOR ENGINEER --- [Natan Rincon Luna](https://www.linkedin.com/in/natan-rincon-luna)
