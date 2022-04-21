@@ -18,7 +18,7 @@ const Home = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.getgeoapi.com/v2/ip/check?api_key=ebca5da399c57467a98959bc8de5ce020f721cdd`
+        `https://api.getgeoapi.com/v2/ip/check?api_key=${process.env.REACT_APP_GEO_API}`
       )
       .then(function (response) {
         console.log("This one", response);
@@ -36,7 +36,7 @@ const Home = () => {
         }&ResultsPerPage=100`,
         {
           headers: {
-            "Authorization-Key": "RfNibr7lLoJZ9SKS6mJShB2MUCLGW2Zuza31kkb9swM=",
+            "Authorization-Key": process.env.REACT_APP_USA_JOBS,
           },
         }
       )
@@ -54,7 +54,7 @@ const Home = () => {
         `https://data.usajobs.gov/api/search?Keyword=${keyWord}&LocationName=${userLocation}&ResultsPerPage=100`,
         {
           headers: {
-            "Authorization-Key": "RfNibr7lLoJZ9SKS6mJShB2MUCLGW2Zuza31kkb9swM=",
+            "Authorization-Key": process.env.REACT_APP_USA_JOBS,
           },
         }
       )

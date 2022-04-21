@@ -3,6 +3,7 @@ const app = express();
 const bcrypt = require("bcrypt");
 const { Pool } = require("pg");
 const cors = require("cors");
+require("dotenv").config();
 const port = 4000;
 
 app.use(express.json());
@@ -11,13 +12,12 @@ app.use(cors());
 
 const pool = new Pool({
     // Local host
-    host: "localhost",
-    database: "rapusers",
-    //Deployment
-    //   connectionString: process.env.DATABASE_URL,
-    //   ssl: {
-    //     rejectUnauthorized: false,
-    //   },
+    // host: "localhost",
+    // database: "rapusers",
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false,
+    },
 });
 
 //Get database info ↓↓↓↓↓
@@ -61,6 +61,6 @@ app.get("/login/:username/:passkey", async(req, res) => {
     }
 });
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`Example app listening on port ${port}`);
 });
