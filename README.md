@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+##
+<p align="center">
+<img src="./public/images/Rapscallion2.gif" width="900" height="300">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Planning](#planning)
+* [Learning](#learning)
+* [Getting Started](#getting-started)
 
-## Available Scripts
+## General info 
+This project was created in order to help not only the general population but the MCSP-11 Cohort members find job/career paths. 
 
-In the project directory, you can run:
+## Technologies
+This Project was created with:
+* REACT
+* CSS
+* JavaScript
+* Expess.js
+* PSQL
+* [MUI](https://mui.com/) Library
+* [USA Jobs API](https://developer.usajobs.gov/API-Reference) External API
+* [IP GEO API](https://getgeoapi.com/) External API
 
-### `npm start`
+## Planning
+Our plans for this project were fairly straightforward; our team agreed upon using Trello to track tasks for daily updates/visualization of goals. Once we agree upon which tasks needed to be done for the day, we would either split up into groups of two or would all stay together and code share to ensure the larger/complex tasks were done correctly and understood by all team members. Every morning, our team would have a Stand-up meeting to plan out the tasks that should be completed/worked on for the day.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Learning
+This project has expanded our knowledge with the use of libraries, React and external APIs. We've also become much more confident in utilizing the features of MUI as well as the power of external API's to further the interactivity of the site. The feedback form functionality was a task that we thought would be much more difficult than it actually was, and is a feature we plan to continue to implement in future projects.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
+Fork and clone this repository:
+$ cd into the project, and run $ npm install
 
-### `npm test`
+$ cd into server, and run $ npm install ====> (NOTE: the reason you need to npm install in the backend folder is to not only split up your backend and frontend dependencies, but to ensure your server has the correct dependencies installed and working)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Getting the database up and running:
+Tell psql to run the code in migration.sql using the Terminal. This will create the "rapusers" database and the tables for us:
 
-### `npm run build`
+$ psql -f migration.sql
+The above command will "seed" and "create" the database for us; in other words, add some sample data to work with.
+(** MUST BE IN SERVER FOLDER**)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Go into your psql repl, connect to the rapusers database and confirm everything is there:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+$ psql rapusers
+rapusers=# SELECT * FROM users;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Open two seperate terminals and run nodemon server.js in the path "user :rapscallion/backend/server"
+and npm run start in the other terminal tab in the path "user:/rapscallion"
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Creators 
+1. GROUP LEAD --- [Elijah Palmer](https://www.linkedin.com/in/elijah-palmer/)
+2. ASSISTANT GROUP LEAD --- [Anjali Thing](https://www.linkedin.com/in/anjali-thing/)
+3. JUNIOR ENGINEER --- [Trevor Mulvany](https://www.linkedin.com/in/trevor-mulvany/)
+4. JUNIOR ENGINEER --- [Natan Rincon Luna](https://github.com/natanrinconluna)

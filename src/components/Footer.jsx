@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import SearchIcon from "@mui/icons-material/Search";
-import Grid from "@mui/material/Grid";
 import styled from "styled-components";
 import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
@@ -266,6 +262,10 @@ const Container = styled.div`
   em {
     font-size: 28px;
     color: rgb(41, 128, 185);
+  }
+  a{
+    color: black;
+    text-decoration: none;
   }
 `;
 

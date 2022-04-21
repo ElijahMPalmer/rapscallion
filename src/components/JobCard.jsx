@@ -1,27 +1,8 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import Stack from "@mui/material/Stack";
+import React from "react";
 import Button from "@mui/material/Button";
-import SearchIcon from "@mui/icons-material/Search";
-import Grid from "@mui/material/Grid";
 import styled from "styled-components";
-import axios from "axios";
 
 function jobCard({ results }) {
-  //   <JobCard
-  //   jobTitle={results[0].MatchedObjectDescriptor.PositionTitle}
-  //   salary={`$${Math.round(
-  //     results[0].MatchedObjectDescriptor.PositionRemuneration[0]
-  //       .MinimumRange
-  //   )} - $${Math.round(
-  //     results[0].MatchedObjectDescriptor.PositionRemuneration[0]
-  //       .MaximumRange
-  //   )}`}
-  //   desc={results[0].MatchedObjectDescriptor.QualificationSummary}
-  //   link={results[0].MatchedObjectDescriptor.PositionURI}
-  // />
   return (
     <>
       {results.map((item, index) => (
