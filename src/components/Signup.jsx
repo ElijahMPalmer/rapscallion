@@ -1,8 +1,9 @@
 import * as React from "react";
 import axios from "axios";
 import { useState } from "react";
-import { Button, Modal, Box, Stack, TextField } from "@mui/material";
+import { Button, Modal, Box, Stack, TextField, Alert } from "@mui/material";
 import Typography from "@mui/material/Typography";
+
 
 const style = {
   position: "absolute",
@@ -40,6 +41,7 @@ export default function Signup() {
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
+  const [errorAlert, setErrorAlert] = useState(false);
 
 
   function recordUsername(value) {
@@ -79,7 +81,11 @@ export default function Signup() {
       .then(function (response) {
         if(response.data === 'Logged In'){
           setLoggedIn(true);
-        } else {
+        } else if(response.data ==='no result'){
+          setErrorAlert(true);
+          setTimeout(()=>{
+            setErrorAlert(false)
+          }, 2000);
         }
       })
       .catch(function (error) {
@@ -88,6 +94,7 @@ export default function Signup() {
   }
 
   return (
+    <>
     <div className="UserButtons">
       {loggedIn ? (
         <Stack direction="row" spacing={2}>
@@ -196,5 +203,15 @@ export default function Signup() {
         </Stack>
       )}
     </div>
+    <div>
+    {errorAlert && (
+          <Alert
+            sx={{ margin: "0 20px" }}
+            id="login-error"
+            severity="error"
+          >{`Username does not exist`}</Alert>
+        )}
+    </div>
+    </>
   );
 }

@@ -52,7 +52,9 @@ app.get("/login/:username/:passkey", async(req, res) => {
             "SELECT * FROM users WHERE username = $1", [username],
 
         );
-        if (await bcrypt.compare(passkey, result.rows[0].passkey)) {
+        if (!result.rows[0]) {
+            res.send('no result');
+        } else if (await bcrypt.compare(passkey, result.rows[0].passkey)) {
             res.send("Logged In");
         } else {
             res.send("Access Denied");

@@ -7,7 +7,7 @@ const Job = () => {
     <CallToAction>
       <main>
         <Container>
-          <img src="images/callToAction.jpg" alt="" />
+          <img  id='jobImg' src="images/callToAction.jpg" alt="" />
           <ButtonGroup>
             <h3>Finding a Job can be intimidating.</h3>
             <h4>

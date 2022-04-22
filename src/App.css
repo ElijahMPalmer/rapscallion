@@ -260,3 +260,18 @@
             transform: translateY(3px);
         }
     }
+    
+    @media screen and (max-width: 1200px) {
+        #job-qoute {
+            width: 200px;
+        }
+        #jobImg {
+            width: 400px;
+        }
+        main {
+            width: 800px;
+        }
+        .left-links a {
+            display: none;
+        }
+    }

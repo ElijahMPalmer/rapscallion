@@ -5,6 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import styled from "styled-components";
 import axios from "axios";
 import JobCard from "./JobCard";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import Alert from "@mui/material/Alert";
 import env from "react-dotenv";
@@ -67,6 +68,14 @@ const Home = () => {
       });
   }
 
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        md: 1200,
+      },
+    },
+  });
+
   return (
     <div className="compat-container">
       <main>
@@ -92,7 +101,14 @@ const Home = () => {
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px 0px 0px 8px",
-                width: "400px",
+                
+                [theme.breakpoints.down('md')]: {
+                  width: '200px'
+                },
+                [theme.breakpoints.up('md')]: {
+                  width: '400px'
+                }
+
               }}
               onChange={function (e) {
                 setSearch(e.target.value);
@@ -109,7 +125,12 @@ const Home = () => {
               sx={{
                 backgroundColor: "white",
                 borderRadius: "0px 0px 0px 0px",
-                width: "400px",
+                [theme.breakpoints.down('md')]: {
+                  width: '200px'
+                },
+                [theme.breakpoints.up('md')]: {
+                  width: '400px'
+                }
               }}
               onChange={function (e) {
                 setLocation(e.target.value);
