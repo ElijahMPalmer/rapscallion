@@ -168,7 +168,9 @@ const Home = () => {
                 <Button
                   variant="contained"
                   className="pop-search"
-                  startIcon={<SearchIcon />}
+                  startIcon={<SearchIcon sx={{
+                    color: "orange"
+                  }}/>}
                   onClick={(e) => getPopJobs(e.target.innerText)}
                   sx={{
                     backgroundColor: "rgba(128, 128, 128, 0.4)",
@@ -181,7 +183,9 @@ const Home = () => {
                 <Button
                   variant="contained"
                   className="pop-search"
-                  startIcon={<SearchIcon />}
+                  startIcon={<SearchIcon sx={{
+                    color: "orange"
+                  }}/>}
                   onClick={(e) => getPopJobs(e.target.innerText)}
                   sx={{
                     backgroundColor: "rgba(128, 128, 128, 0.4)",
@@ -194,7 +198,9 @@ const Home = () => {
                 <Button
                   variant="contained"
                   className="pop-search"
-                  startIcon={<SearchIcon />}
+                  startIcon={<SearchIcon sx={{
+                    color: "orange"
+                  }}/>}
                   onClick={(e) => getPopJobs(e.target.innerText)}
                   sx={{
                     backgroundColor: "rgba(128, 128, 128, 0.4)",
@@ -207,7 +213,9 @@ const Home = () => {
                 <Button
                   variant="contained"
                   className="pop-search"
-                  startIcon={<SearchIcon />}
+                  startIcon={<SearchIcon sx={{
+                    color: "orange"
+                  }}/>}
                   onClick={(e) => getPopJobs(e.target.innerText)}
                   sx={{
                     backgroundColor: "rgba(128, 128, 128, 0.4)",
