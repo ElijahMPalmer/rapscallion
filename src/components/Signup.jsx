@@ -41,6 +41,8 @@ export default function Signup() {
   const [password, setpassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
 
+  const BASE_URL = window.location.origin;
+
   function recordUsername(value) {
     setusername(() => value);
   }
@@ -54,7 +56,7 @@ export default function Signup() {
 
     //  post request
     axios
-      .post(`http://localhost:4000/users`, {
+      .post(`${BASE_URL}/users`, {
         username: username,
         passkey: password,
       })
@@ -72,7 +74,7 @@ export default function Signup() {
 
     // get request
     axios
-      .get(`http://localhost:4000/login/${username}/${password}`, {
+      .get(`${BASE_URL}/login/${username}/${password}`, {
         mode: "cors",
       })
       .then(function (response) {

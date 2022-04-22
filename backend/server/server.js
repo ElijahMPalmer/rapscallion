@@ -13,7 +13,7 @@ app.use(cors());
 const pool = new Pool({
     // Local host
     // host: "localhost",
-    // database: "rapusers",
+    database: "rapusers",
     connectionString: process.env.DATABASE_URL,
     ssl: {
         rejectUnauthorized: false,
@@ -62,5 +62,5 @@ app.get("/login/:username/:passkey", async(req, res) => {
 });
 
 app.listen(process.env.PORT || port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`Example app listening on port ${process.env.PORT || port}`);
 });

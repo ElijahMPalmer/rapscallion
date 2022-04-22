@@ -7,6 +7,7 @@ import axios from "axios";
 import JobCard from "./JobCard";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import Alert from "@mui/material/Alert";
+import env from "react-dotenv";
 
 const Home = () => {
   const [search, setSearch] = useState("");
@@ -29,6 +30,7 @@ const Home = () => {
   }, []);
 
   function getJobs() {
+    console.log(process.env.TEST)
     axios
       .get(
         `https://data.usajobs.gov/api/search?Keyword=${search}&LocationName=${
@@ -54,7 +56,7 @@ const Home = () => {
         `https://data.usajobs.gov/api/search?Keyword=${keyWord}&LocationName=${userLocation}&ResultsPerPage=100`,
         {
           headers: {
-            "Authorization-Key": process.env.REACT_APP_USA_JOBS,
+            "Authorization-Key": env.REACT_APP_USA_JOBS,
           },
         }
       )
