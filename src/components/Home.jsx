@@ -22,7 +22,6 @@ const Home = () => {
         `https://api.getgeoapi.com/v2/ip/check?api_key=${process.env.REACT_APP_GEO_API}`
       )
       .then(function (response) {
-        console.log("This one", response);
         setUserLocation(
           `${response.data.city.name}, ${response.data.area.name}`
         );

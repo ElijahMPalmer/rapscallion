@@ -41,7 +41,6 @@ export default function Signup() {
   const [password, setpassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
 
-  const BASE_URL = window.location.origin;
 
   function recordUsername(value) {
     setusername(() => value);
@@ -56,7 +55,7 @@ export default function Signup() {
 
     //  post request
     axios
-      .post(`${BASE_URL}/users`, {
+      .post(`rapscallion.herokuapp.com/users`, {
         username: username,
         passkey: password,
       })
@@ -74,7 +73,7 @@ export default function Signup() {
 
     // get request
     axios
-      .get(`${BASE_URL}/login/${username}/${password}`, {
+      .get(`rapscallion.herokuapp.com/login/${username}/${password}`, {
         mode: "cors",
       })
       .then(function (response) {
