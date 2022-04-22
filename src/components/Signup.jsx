@@ -55,7 +55,7 @@ export default function Signup() {
 
     //  post request
     axios
-      .post(`rapscallion.herokuapp.com/users`, {
+      .post(`localhost:5000/users`, {
         username: username,
         passkey: password,
       })
