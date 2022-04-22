@@ -41,7 +41,7 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         width: 100%;
     }
     
@@ -62,7 +62,6 @@
     .UserButtons {
         display: flex;
         justify-content: flex-end;
-        padding: 2em;
     }
     
     .HeaderLinks {
@@ -225,6 +224,17 @@
     
     .footer-button:hover {
         background-color: transparent;
+    }
+    
+    #login-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #login-error {
+        position: absolute;
     }
     
     @keyframes App-logo-spin {

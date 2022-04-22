@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Button, Modal, Box, Stack, TextField, Alert } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
-
 const style = {
   position: "absolute",
   top: "50%",
@@ -43,7 +42,6 @@ export default function Signup() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [errorAlert, setErrorAlert] = useState(false);
 
-
   function recordUsername(value) {
     setusername(() => value);
   }
@@ -79,13 +77,13 @@ export default function Signup() {
         mode: "cors",
       })
       .then(function (response) {
-        if(response.data === 'Logged In'){
+        if (response.data === "Logged In") {
           setLoggedIn(true);
-        } else if(response.data ==='no result'){
+        } else if (response.data === "no result") {
           setErrorAlert(true);
-          setTimeout(()=>{
-            setErrorAlert(false)
-          }, 2000);
+          setTimeout(() => {
+            setErrorAlert(false);
+          }, 4000);
         }
       })
       .catch(function (error) {
@@ -95,123 +93,143 @@ export default function Signup() {
 
   return (
     <>
-    <div className="UserButtons">
-      {loggedIn ? (
-        <Stack direction="row" spacing={2}>
-          <h4>{`Hello, ${username}!`}</h4>
-          <Button variant="outlined" onClick={() => setLoggedIn(false)}>
-            Log Out
-          </Button> 
-        </Stack>
-      ) : (
-        <Stack direction="row" spacing={2}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleOpenSignup}
-          >
-            Sign Up
-          </Button>
-          <Modal
-            aria-labelledby="simple-modal-title"
-            aria-describedby="simple-modal-description"
-            open={openSignup}
-            onClose={handleCloseSignup}
-          >
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                <h3>Are you new?</h3>
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                {/*  form 1 */}
-                <form className="form-in-sign-up" onSubmit={formSubmitSignup}>
-                  <TextField
-                    fullWidth
-                    required
-                    id="outlined"
-                    label="Create Username"
-                    margin="normal"
-                    type="text"
-                    onChange={(e) => {
-                      recordUsername(e.target.value);
-                    }}
-                  />
-                  <br />
-                  <TextField
-                    required
-                    fullWidth
-                    id="outlined-password-input"
-                    label="Create New Password"
-                    type="password"
-                    onChange={(e) => {
-                      recordPassword(e.target.value);
-                    }}
-                  />
-                  <br />
-                  <Button id="signup-btn" variant="contained" type="submit">
-                    Sign up
-                  </Button>
-                </form>
-              </Typography>
-            </Box>
-          </Modal>
-          <Button variant="outlined" onClick={handleOpenLogin}>
-            Log in
-          </Button>
-          <Modal
-            aria-labelledby="simple-modal-title"
-            aria-describedby="simple-modal-description"
-            open={openLogin}
-            onClose={handleCloseLogin}
-          >
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                <h3>Welcome Back!</h3>
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <form className="form-in-sign-up" onSubmit={formSubmitLogin}>
-                  <TextField
-                    required
-                    fullWidth
-                    id="outlined"
-                    label="Username"
-                    margin="normal"
-                    type="text"
-                    onChange={(e) => {
-                      recordUsername(e.target.value);
-                    }}
-                  />
-                  <br />
-                  <TextField
-                    required
-                    fullWidth
-                    id="outlined-password-input"
-                    label="Password"
-                    type="password"
-                    onChange={(e) => {
-                      recordPassword(e.target.value);
-                    }}
-                  />
-                  <br />
-                  <Button id="signup-btn" variant="contained" type="submit">
-                    Login
-                  </Button>
-                </form>
-              </Typography>
-            </Box>
-          </Modal>
-        </Stack>
-      )}
-    </div>
-    <div>
-    {errorAlert && (
-          <Alert
-            sx={{ margin: "0 20px" }}
-            id="login-error"
-            severity="error"
-          >{`Username does not exist`}</Alert>
+      <div className="UserButtons">
+        {loggedIn ? (
+          <Stack direction="row" spacing={2}>
+            <h4>{`Hello, ${username}!`}</h4>
+            <Button variant="outlined" onClick={() => setLoggedIn(false)}>
+              Log Out
+            </Button>
+          </Stack>
+        ) : (
+          <section id='login-group'>
+            
+            <Stack direction="row" spacing={3}>
+            <div>
+              {errorAlert && (
+                <Alert
+                  sx={{ margin: '0 8px',
+                        zIndex: '4',
+                     }}
+                  id="login-error"
+                  severity="error"
+                >{`Username or Password does not exist`}</Alert>
+              )}
+            </div>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleOpenSignup}
+              >
+                Sign Up
+              </Button>
+              <Modal
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+                open={openSignup}
+                onClose={handleCloseSignup}
+              >
+                <Box sx={style}>
+                  <Typography
+                    id="modal-modal-title"
+                    variant="h6"
+                    component="h2"
+                  >
+                    <h3>Are you new?</h3>
+                  </Typography>
+                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    {/*  form 1 */}
+                    <form
+                      className="form-in-sign-up"
+                      onSubmit={formSubmitSignup}
+                    >
+                      <TextField
+                        fullWidth
+                        required
+                        id="outlined"
+                        label="Create Username"
+                        margin="normal"
+                        type="text"
+                        onChange={(e) => {
+                          recordUsername(e.target.value);
+                        }}
+                      />
+                      <br />
+                      <TextField
+                        required
+                        fullWidth
+                        id="outlined-password-input"
+                        label="Create New Password"
+                        type="password"
+                        onChange={(e) => {
+                          recordPassword(e.target.value);
+                        }}
+                      />
+                      <br />
+                      <Button id="signup-btn" variant="contained" type="submit">
+                        Sign up
+                      </Button>
+                    </form>
+                  </Typography>
+                </Box>
+              </Modal>
+              <Button variant="outlined" onClick={handleOpenLogin}>
+                Log in
+              </Button>
+              <Modal
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+                open={openLogin}
+                onClose={handleCloseLogin}
+              >
+                <Box sx={style}>
+                  <Typography
+                    id="modal-modal-title"
+                    variant="h6"
+                    component="h2"
+                  >
+                    <h3>Welcome Back!</h3>
+                  </Typography>
+                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    <form
+                      className="form-in-sign-up"
+                      onSubmit={formSubmitLogin}
+                    >
+                      <TextField
+                        required
+                        fullWidth
+                        id="outlined"
+                        label="Username"
+                        margin="normal"
+                        type="text"
+                        onChange={(e) => {
+                          recordUsername(e.target.value);
+                        }}
+                      />
+                      <br />
+                      <TextField
+                        required
+                        fullWidth
+                        id="outlined-password-input"
+                        label="Password"
+                        type="password"
+                        onChange={(e) => {
+                          recordPassword(e.target.value);
+                        }}
+                      />
+                      <br />
+                      <Button id="signup-btn" variant="contained" type="submit">
+                        Login
+                      </Button>
+                    </form>
+                  </Typography>
+                </Box>
+              </Modal>
+            </Stack>
+            
+          </section>
         )}
-    </div>
+      </div>
     </>
   );
 }
