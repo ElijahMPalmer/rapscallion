@@ -55,7 +55,7 @@ export default function Signup() {
 
     //  post request
     axios
-      .post(`localhost:5000/users`, {
+      .post(`https://rapscallion.herokuapp.com/users`, {
         username: username,
         passkey: password,
       })
@@ -73,7 +73,7 @@ export default function Signup() {
 
     // get request
     axios
-      .get(`rapscallion.herokuapp.com/login/${username}/${password}`, {
+      .get(`https://rapscallion.herokuapp.com/login/${username}/${password}`, {
         mode: "cors",
       })
       .then(function (response) {
