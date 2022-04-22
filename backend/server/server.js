@@ -10,6 +10,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
+app.use(express.static('../../build'));
+
 const pool = new Pool({
     // Local host
     // host: "localhost",
@@ -46,16 +48,15 @@ app.post("/users", async(req, res) => {
 app.get("/login/:username/:passkey", async(req, res) => {
     const { username, passkey } = req.params;
     try {
-        pool.query(
+        const result = await pool.query(
             "SELECT * FROM users WHERE username = $1", [username],
-            async(err, result) => {
-                if (await bcrypt.compare(passkey, result.rows[0].passkey)) {
-                    res.send("Logged In");
-                } else {
-                    res.send("Access Denied");
-                }
-            }
+
         );
+        if (await bcrypt.compare(passkey, result.rows[0].passkey)) {
+            res.send("Logged In");
+        } else {
+            res.send("Access Denied");
+        }
     } catch (err) {
         console.error(err.message);
     }
