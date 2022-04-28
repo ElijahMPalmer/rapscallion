@@ -8,7 +8,7 @@ const Header = () => {
         <div className="logo-container">
           <div id="rap-logo">
             <a href="/">
-              <h1>RAPSCALLION</h1>
+              <h1 id='header'>RAPSCALLION</h1>
             </a>
           </div>
           <Signup />
