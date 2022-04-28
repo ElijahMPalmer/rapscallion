@@ -1,6 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import styled from "styled-components";
+import Grid from '@mui/material/Grid';
 
 const Job = () => {
   return (
@@ -47,6 +48,7 @@ const CallToAction = styled.div`
     width: 500px;
     border-radius: 0px 8px 12px 8px;
   }
+  
 `;
 const ButtonGroup = styled.div`
   display: flex;
@@ -67,6 +69,9 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  @media (max-width: 780px) {
+    flex-direction: column;
+  }
 `;
 
 const Content = styled.div``;

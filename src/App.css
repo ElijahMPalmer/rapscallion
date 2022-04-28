@@ -297,7 +297,7 @@
             width: 400px;
         }
         main {
-            width: 730px;
+            width: 380px;
             text-align: center;
         }
         .left-links a {
@@ -305,5 +305,11 @@
         }
         #ForEmployers {
             display: none;
+        }
+        #header {
+            font-size: 25px;
+        }
+        .logo-container {
+            margin-right: 8px;
         }
     }

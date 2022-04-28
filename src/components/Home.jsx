@@ -71,9 +71,9 @@ const Home = () => {
   const theme = createTheme({
     breakpoints: {
       values: {
-        sm: 780,
-        md: 900,
-        lg: 1200,
+        mobile: 780,
+        tablet: 900,
+        desktop: 1200,
       },
     },
   });
@@ -103,13 +103,17 @@ const Home = () => {
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px 0px 0px 8px",
-                
-                [theme.breakpoints.down('lg')]: {
+                [theme.breakpoints.between('mobile', 'tablet')]: {
+                  fontSize: '30px',
+                  width: '100px',
+                  
+                },
+                [theme.breakpoints.between('tablet', 'desktop')]: {
                   fontSize: '30px',
                   width: '200px',
                   
                 },
-                [theme.breakpoints.up('lg')]: {
+                [theme.breakpoints.up('desktop')]: {
                   fontSize: '30px',
                   width: '400px'
                 }
@@ -130,10 +134,18 @@ const Home = () => {
               sx={{
                 backgroundColor: "white",
                 borderRadius: "0px 0px 0px 0px",
-                [theme.breakpoints.down('md')]: {
-                  width: '200px'
+                [theme.breakpoints.between('mobile', 'tablet')]: {
+                  fontSize: '30px',
+                  width: '100px',
+                  
                 },
-                [theme.breakpoints.up('md')]: {
+                [theme.breakpoints.between('tablet', 'desktop')]: {
+                  fontSize: '30px',
+                  width: '200px',
+                  
+                },
+                [theme.breakpoints.up('desktop')]: {
+                  fontSize: '30px',
                   width: '400px'
                 }
               }}
@@ -186,16 +198,27 @@ const Home = () => {
                   sx={{
                     backgroundColor: "rgba(128, 128, 128, 0.4)",
                     color: "rgba(255, 255, 255, 1)",
-                    whiteSpace: "nowrap",
-                    [theme.breakpoints.down('md')]: {
+                    
+                    [theme.breakpoints.down('mobile')]: {
+                      maxHeight: '29.5px',
+                      lineHeight: '1.25',                      
+                      whiteSpace: "wrap",
+                      width: '120px',
+                      fontSize: '7px',
+                      svg: {
+                        display: 'none'
+                      }
+                    },
+                    [theme.breakpoints.between('mobile', 'tablet')]: {
+                      whiteSpace: "nowrap",
                       width: '120px',
                       fontSize: '10px',
                       svg: {
                         display: 'none'
                       }
                     },
-                    [theme.breakpoints.up('md')]: {
-                      
+                    [theme.breakpoints.up('tablet')]: {
+                      whiteSpace: "nowrap"
                     }
                   }}
                 >
@@ -212,14 +235,24 @@ const Home = () => {
                     backgroundColor: "rgba(128, 128, 128, 0.4)",
                     color: "rgba(255, 255, 255, 1)",
                     whiteSpace: "nowrap",
-                    [theme.breakpoints.down('md')]: {
+                    [theme.breakpoints.down('mobile')]: {
+                      minHeight: '29.5px',
+                      lineHeight: '1.25',                      
+                      whiteSpace: "wrap",
+                      width: '120px',
+                      fontSize: '7px',
+                      svg: {
+                        display: 'none'
+                      }
+                    },
+                    [theme.breakpoints.between('mobile','tablet')]: {
                       width: '120px',
                       fontSize: '10px',
                       svg: {
                         display: 'none'
                       }
                     },
-                    [theme.breakpoints.up('md')]: {
+                    [theme.breakpoints.up('tablet')]: {
                       
                     }
                   }}
@@ -237,7 +270,17 @@ const Home = () => {
                     backgroundColor: "rgba(128, 128, 128, 0.4)",
                     color: "rgba(255, 255, 255, 1)",
                     whiteSpace: "wrap",
-                    [theme.breakpoints.down('md')]: {
+                    [theme.breakpoints.down('mobile')]: {
+                      maxHeight: '29.5px',
+                      lineHeight: '1.25',                      
+                      whiteSpace: "wrap",
+                      width: '120px',
+                      fontSize: '7px',
+                      svg: {
+                        display: 'none'
+                      }
+                    },
+                    [theme.breakpoints.between('mobile', 'tablet')]: {
                       maxHeight: '29.5px',
                       width: '120px',
                       fontSize: '10px',
@@ -248,9 +291,8 @@ const Home = () => {
                         display: 'none'
                       }
                     },
-                    [theme.breakpoints.up('md')]: {
-                      lineHeight: '1.25',
-                      maxHeight: '36.5px'
+                    [theme.breakpoints.up('tablet')]: {
+                      whiteSpace: "nowrap"
                     }
                   }}
                 >
@@ -267,14 +309,24 @@ const Home = () => {
                     backgroundColor: "rgba(128, 128, 128, 0.4)",
                     color: "rgba(255, 255, 255, 1)",
                     whiteSpace: "nowrap",
-                    [theme.breakpoints.down('md')]: {
+                    [theme.breakpoints.down('mobile')]: {
+                      minHeight: '29.5px',
+                      lineHeight: '1.25',                      
+                      whiteSpace: "wrap",
+                      width: '120px',
+                      fontSize: '7px',
+                      svg: {
+                        display: 'none'
+                      }
+                    },
+                    [theme.breakpoints.between('mobile','tablet')]: {
                       width: '120px',
                       fontSize: '10px',
                       svg: {
                         display: 'none'
                       }
                     },
-                    [theme.breakpoints.up('md')]: {
+                    [theme.breakpoints.up('tablet')]: {
                       
                     }
                   }}
@@ -292,14 +344,24 @@ const Home = () => {
                     backgroundColor: "rgba(128, 128, 128, 0.4)",
                     color: "rgba(255, 255, 255, 1)",
                     whiteSpace: "nowrap",
-                    [theme.breakpoints.down('md')]: {
+                    [theme.breakpoints.down('mobile')]: {
+                      minHeight: '29.5px',
+                      lineHeight: '1.25',                      
+                      whiteSpace: "wrap",
+                      width: '120px',
+                      fontSize: '7px',
+                      svg: {
+                        display: 'none'
+                      }
+                    },
+                    [theme.breakpoints.between('mobile','tablet')]: {
                       width: '120px',
                       fontSize: '10px',
                       svg: {
                         display: 'none'
                       }
                     },
-                    [theme.breakpoints.up('md')]: {
+                    [theme.breakpoints.up('tablet')]: {
                       
                     }
                   }}
