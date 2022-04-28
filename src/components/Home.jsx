@@ -71,7 +71,9 @@ const Home = () => {
   const theme = createTheme({
     breakpoints: {
       values: {
-        md: 1200,
+        sm: 780,
+        md: 900,
+        lg: 1200,
       },
     },
   });
@@ -96,16 +98,19 @@ const Home = () => {
                 sx: { borderRadius: "8px 0px 0px 8px" },
               }}
               id="outlined-basic companies"
-              placeholder="Search jobs, keywords or companies"
+              placeholder="Search jobs or keywords"
               variant="outlined"
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px 0px 0px 8px",
                 
-                [theme.breakpoints.down('md')]: {
-                  width: '200px'
+                [theme.breakpoints.down('lg')]: {
+                  fontSize: '30px',
+                  width: '200px',
+                  
                 },
-                [theme.breakpoints.up('md')]: {
+                [theme.breakpoints.up('lg')]: {
+                  fontSize: '30px',
                   width: '400px'
                 }
 
@@ -182,6 +187,16 @@ const Home = () => {
                     backgroundColor: "rgba(128, 128, 128, 0.4)",
                     color: "rgba(255, 255, 255, 1)",
                     whiteSpace: "nowrap",
+                    [theme.breakpoints.down('md')]: {
+                      width: '120px',
+                      fontSize: '10px',
+                      svg: {
+                        display: 'none'
+                      }
+                    },
+                    [theme.breakpoints.up('md')]: {
+                      
+                    }
                   }}
                 >
                   Police Officer
@@ -197,6 +212,16 @@ const Home = () => {
                     backgroundColor: "rgba(128, 128, 128, 0.4)",
                     color: "rgba(255, 255, 255, 1)",
                     whiteSpace: "nowrap",
+                    [theme.breakpoints.down('md')]: {
+                      width: '120px',
+                      fontSize: '10px',
+                      svg: {
+                        display: 'none'
+                      }
+                    },
+                    [theme.breakpoints.up('md')]: {
+                      
+                    }
                   }}
                 >
                   Retail
@@ -211,7 +236,22 @@ const Home = () => {
                   sx={{
                     backgroundColor: "rgba(128, 128, 128, 0.4)",
                     color: "rgba(255, 255, 255, 1)",
-                    whiteSpace: "nowrap",
+                    whiteSpace: "wrap",
+                    [theme.breakpoints.down('md')]: {
+                      maxHeight: '29.5px',
+                      width: '120px',
+                      fontSize: '10px',
+                      overflowWrap: 'break-word',
+                      whiteSpace: 'wrap',
+                      lineHeight: '1.25',
+                      svg: {
+                        display: 'none'
+                      }
+                    },
+                    [theme.breakpoints.up('md')]: {
+                      lineHeight: '1.25',
+                      maxHeight: '36.5px'
+                    }
                   }}
                 >
                   Software Development
@@ -227,6 +267,16 @@ const Home = () => {
                     backgroundColor: "rgba(128, 128, 128, 0.4)",
                     color: "rgba(255, 255, 255, 1)",
                     whiteSpace: "nowrap",
+                    [theme.breakpoints.down('md')]: {
+                      width: '120px',
+                      fontSize: '10px',
+                      svg: {
+                        display: 'none'
+                      }
+                    },
+                    [theme.breakpoints.up('md')]: {
+                      
+                    }
                   }}
                 >
                   Education
@@ -242,6 +292,16 @@ const Home = () => {
                     backgroundColor: "rgba(128, 128, 128, 0.4)",
                     color: "rgba(255, 255, 255, 1)",
                     whiteSpace: "nowrap",
+                    [theme.breakpoints.down('md')]: {
+                      width: '120px',
+                      fontSize: '10px',
+                      svg: {
+                        display: 'none'
+                      }
+                    },
+                    [theme.breakpoints.up('md')]: {
+                      
+                    }
                   }}
                 >
                   Dentist
@@ -263,6 +323,9 @@ const PopularSearch = styled.div`
   align-items: center;
   Button {
     margin: 0 6px;
+  }
+  @media (max-width: 780px) {
+    max-width: 400px;
   }
 `;
 

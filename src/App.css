@@ -123,7 +123,7 @@
     
     main {
         width: 955px;
-        padding: 35px;
+        padding: 35px 0;
     }
     
     .compat-container main h1 {
@@ -279,9 +279,31 @@
             width: 400px;
         }
         main {
-            width: 800px;
+            width: 730px;
         }
         .left-links a {
+            display: none;
+        }
+        #ForEmployers {
+            display: none;
+        }
+    }
+    
+    @media screen and (max-width: 780px) {
+        #job-qoute {
+            width: 200px;
+        }
+        #jobImg {
+            width: 400px;
+        }
+        main {
+            width: 730px;
+            text-align: center;
+        }
+        .left-links a {
+            display: none;
+        }
+        #ForEmployers {
             display: none;
         }
     }
