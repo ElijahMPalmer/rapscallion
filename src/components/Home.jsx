@@ -200,11 +200,11 @@ const Home = () => {
                     color: "rgba(255, 255, 255, 1)",
                     
                     [theme.breakpoints.down('mobile')]: {
-                      maxHeight: '29.5px',
+                      minHeight: '29.5px',
                       lineHeight: '1.25',                      
                       whiteSpace: "wrap",
                       width: '120px',
-                      fontSize: '7px',
+                      fontSize: '10px',
                       svg: {
                         display: 'none'
                       }
@@ -240,7 +240,7 @@ const Home = () => {
                       lineHeight: '1.25',                      
                       whiteSpace: "wrap",
                       width: '120px',
-                      fontSize: '7px',
+                      fontSize: '10px',
                       svg: {
                         display: 'none'
                       }
@@ -275,7 +275,7 @@ const Home = () => {
                       lineHeight: '1.25',                      
                       whiteSpace: "wrap",
                       width: '120px',
-                      fontSize: '7px',
+                      fontSize: '10px',
                       svg: {
                         display: 'none'
                       }
@@ -314,7 +314,7 @@ const Home = () => {
                       lineHeight: '1.25',                      
                       whiteSpace: "wrap",
                       width: '120px',
-                      fontSize: '7px',
+                      fontSize: '10px',
                       svg: {
                         display: 'none'
                       }
@@ -349,7 +349,7 @@ const Home = () => {
                       lineHeight: '1.25',                      
                       whiteSpace: "wrap",
                       width: '120px',
-                      fontSize: '7px',
+                      fontSize: '10px',
                       svg: {
                         display: 'none'
                       }
@@ -388,6 +388,10 @@ const PopularSearch = styled.div`
   }
   @media (max-width: 780px) {
     max-width: 400px;
+    flex-direction: column;
+    Button {
+      margin: 6px 0;
+    }
   }
 `;
 
@@ -420,6 +424,12 @@ const Carousel = styled.div`
   overflow-x: auto;
   overflow-y: hidden;
   width: 1450px;
+  @media (max-width: 950px) {
+    width: 750px;
+  }
+  @media (max-width: 600px) {
+    width: 350px;
+  }
 `;
 
 const JobWindow = styled.div`

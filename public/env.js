@@ -28,7 +28,7 @@ window.env = {
   "npm_config_local_prefix": "/home/elijah/VSCode/rapscallion",
   "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus",
   "COLORTERM": "truecolor",
-  "GIO_LAUNCHED_DESKTOP_FILE_PID": "93152",
+  "GIO_LAUNCHED_DESKTOP_FILE_PID": "241050",
   "COLOR": "1",
   "NVM_DIR": "/home/elijah/.nvm",
   "npm_config_metrics_registry": "https://registry.npmjs.org/",

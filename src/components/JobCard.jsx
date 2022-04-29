@@ -74,5 +74,15 @@ const Card = styled.div`
     color: black !important;
     margin: 10px 0;
   }
+  @media (max-width: 600px) {
+    min-width: 275px;
+    height: 325px;
+    h4{
+      font-size: 12px; 
+    }
+    p{
+      font-size: 12px;
+    }
+  }
 `;
 
