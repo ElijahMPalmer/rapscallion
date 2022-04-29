@@ -93,6 +93,7 @@ const Home = () => {
               getJobs();
             }}
           >
+            {/* Search Jobs Bar */}
             <TextField
               InputProps={{
                 sx: { borderRadius: "8px 0px 0px 8px" },
@@ -103,6 +104,11 @@ const Home = () => {
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px 0px 0px 8px",
+                [theme.breakpoints.down('mobile')]: {
+                  fontSize: '30px',
+                  width: '80px',
+                  
+                },
                 [theme.breakpoints.between('mobile', 'tablet')]: {
                   fontSize: '30px',
                   width: '100px',
@@ -123,6 +129,7 @@ const Home = () => {
                 setSearch(e.target.value);
               }}
             />
+            {/* Search Location Bar */}
             <TextField
               InputProps={{
                 sx: { borderRadius: "0px 0px 0px 0px" },
@@ -134,6 +141,11 @@ const Home = () => {
               sx={{
                 backgroundColor: "white",
                 borderRadius: "0px 0px 0px 0px",
+                [theme.breakpoints.down('mobile')]: {
+                  fontSize: '30px',
+                  width: '80px',
+                  
+                },
                 [theme.breakpoints.between('mobile', 'tablet')]: {
                   fontSize: '30px',
                   width: '100px',
@@ -163,6 +175,27 @@ const Home = () => {
                 variant="contained"
                 color="success"
                 type="submit"
+                sx={{
+                  [theme.breakpoints.down('mobile')]: {
+                    fontSize: '14px',
+                    width: '80px',
+                    svg: {
+                      display: 'none'
+                    }
+                    
+                  },
+                  [theme.breakpoints.between('mobile', 'tablet')]: {
+                   
+                    
+                  },
+                  [theme.breakpoints.between('tablet', 'desktop')]: {
+                    
+                    
+                  },
+                  [theme.breakpoints.up('desktop')]: {
+                    
+                  }
+                }}
               >
                 Search
               </Button>

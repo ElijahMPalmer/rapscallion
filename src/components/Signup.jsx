@@ -5,6 +5,15 @@ import { Button, Modal, Box, Stack, TextField, Alert } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      mobile: 780,
+    },
+  },
+});
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -16,6 +25,10 @@ const style = {
   border: "3px solid #2b4cb8",
   boxShadow: 3,
   p: 4,
+  [theme.breakpoints.down('mobile')]: {
+    width: 300,
+    height: 300
+  }
 };
 
 export default function Signup() {
