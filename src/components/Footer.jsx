@@ -8,6 +8,17 @@ import Typography from "@mui/material/Typography";
 import Alert from "@mui/material/Alert";
 import Popper from "@mui/material/Popper";
 import Fade from "@mui/material/Fade";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      mobile: 780,
+      tablet: 900,
+      desktop: 1200,
+    },
+  },
+});
 
 const style = {
   position: "absolute",
@@ -20,6 +31,11 @@ const style = {
   border: "3px solid #2b4cb8",
   boxShadow: 3,
   p: 4,
+  [theme.breakpoints.down('mobile')]: {
+    width: 300,
+    height: 300
+    
+  }
 };
 
 function Footer() {
@@ -255,10 +271,14 @@ function Footer() {
                   setFeedBack(e.target.value);
                 }}
                 // size={large}
-                maxRows={4}
+                maxRows={3}
                 variant="outlined"
                 sx={{
                   width: "375px",
+                  [theme.breakpoints.down('mobile')]: {
+                    width: '240px',
+                    
+                  }
                 }}
               />
               <br />
