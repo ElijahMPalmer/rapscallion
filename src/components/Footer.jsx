@@ -51,37 +51,41 @@ function Footer() {
       <Row>
         <Column>
           <Content>
-            <h3>Created By</h3>
-            <h5>
+            <h3 className="footer-col">Created By</h3>
+            <h5 className="footer-links">
               Anjali Thing:{" "}
               <a
+                className="footer-links"
                 target="_blank"
                 href="https://www.linkedin.com/in/anjali-thing/"
               >
                 Linked In
               </a>
             </h5>
-            <h5>
+            <h5 className="footer-links">
               Trevor Mulvany:{" "}
               <a
+                className="footer-links"
                 target="_blank"
                 href="https://www.linkedin.com/in/trevor-mulvany/"
               >
                 Linked In
               </a>
             </h5>
-            <h5>
+            <h5 className="footer-links">
               Elijah Palmer:{" "}
               <a
+                className="footer-links"
                 target="_blank"
                 href="https://www.linkedin.com/in/elijah-palmer/"
               >
                 Linked In
               </a>
             </h5>
-            <h5>
+            <h5 className="footer-links">
               Natan Rincon Luna:{" "}
               <a
+                className="footer-links"
                 target="_blank"
                 href="https://www.linkedin.com/in/natan-rincon-luna/"
               >
@@ -92,53 +96,72 @@ function Footer() {
         </Column>
         <Column>
           <Content>
-            <h3>Contact Us</h3>
+            <h3 className="footer-col">Contact Us</h3>
             <Button
-              className="footer-button"
+              className="footer-button footer-links"
               variant="text"
               onClick={handleOpenFeedback}
+              sx={{
+                textAlign: "left",
+                lineHeight: "1.25",
+                fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
+                }}
             >
               Let us know how we're doing!
             </Button>
             <div>
-            <Button className="footer-button" aria-describedby={id} type="button" onClick={handleClick}>
-              About Us
-            </Button>
-            <Popper id={id} open={open} anchorEl={anchorEl} transition>
-              {({ TransitionProps }) => (
-                <Fade {...TransitionProps} timeout={350}>
-                  <Box sx={{ border: 1, p: 1, bgcolor: "background.paper" }}>
-                    Rapscallion was created by four aspiring software engineers with a vision of creating the world's greatest job finding website. We hope you enjoy it as much as we enjoyed making it!
-                  </Box>
-                </Fade>
-              )}
-            </Popper>
+              <Button
+                className="footer-button footer-links"
+                aria-describedby={id}
+                type="button"
+                onClick={handleClick}
+                sx={{
+                  textAlign: "left",
+                  marginRight: '2px',
+                  fontFamily:
+                    "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
+                  }}
+              >
+                About Us
+              </Button>
+              <Popper id={id} open={open} anchorEl={anchorEl} transition>
+                {({ TransitionProps }) => (
+                  <Fade {...TransitionProps} timeout={350}>
+                    <Box sx={{ border: 1, p: 1, bgcolor: "background.paper" }}>
+                      Rapscallion was created by four aspiring software
+                      engineers with a vision of creating the world's greatest
+                      job finding website. We hope you enjoy it as much as we
+                      enjoyed making it!
+                    </Box>
+                  </Fade>
+                )}
+              </Popper>
             </div>
           </Content>
         </Column>
 
         <Column>
           <Content>
-            <h3>Check out the rest of our work!</h3>
-            <h5>
+            <h3 className="footer-col">Find Out More</h3>
+            <h5 className="footer-links">
               Anjali Thing:{" "}
               <a target="_blank" href="https://github.com/anjali-th">
                 GitHub
               </a>
             </h5>
-            <h5>
+            <h5 className="footer-links">
               Trevor Mulvany:{" "}
               <a target="_blank" href="https://github.com/waterpolo509">
                 GitHub
               </a>
             </h5>
-            <h5>
+            <h5 className="footer-links">
               Elijah Palmer:{" "}
               <a target="_blank" href="https://github.com/ElijahMPalmer">
                 GitHub
               </a>
             </h5>
-            <h5>
+            <h5 className="footer-links">
               Natan Rincon Luna:{" "}
               <a target="_blank" href="https://github.com/natanrinconluna">
                 GitHub
@@ -148,33 +171,48 @@ function Footer() {
         </Column>
         <Column>
           <Content>
-            <h3>Helpful Resources</h3>
+            <h3 className="footer-col">Helpful Resources</h3>
             <h5>
               {" "}
-              <a target="_blank" href="https://www.glassdoor.com">
+              <a
+                target="_blank"
+                href="https://www.glassdoor.com"
+                className="footer-links"
+              >
                 Glassdoor
               </a>
             </h5>
             <h5>
               {" "}
-              <a target="_blank" href="https://www.indeed.com">
+              <a
+                target="_blank"
+                href="https://www.indeed.com"
+                className="footer-links"
+              >
                 Indeed
               </a>
             </h5>
             <h5>
               {" "}
-              <a target="_blank" href="https://www.monster.com">
+              <a
+                target="_blank"
+                href="https://www.monster.com"
+                className="footer-links"
+              >
                 Monster
               </a>
             </h5>
           </Content>
         </Column>
       </Row>
-      <Content>Inspired by: Monster.com</Content>
+      
+      <Content id='footer-inspire'>Inspired by: Monster.com</Content>
       <Content>
         Copyright © 2022, Rapscallion, Inc. "Rapscallion" and logo are
         registered trademarks of Rapscallion, Inc
       </Content>
+      
+
       {/* Start of Modal */}
       <Modal
         aria-labelledby="simple-modal-title"
@@ -263,9 +301,18 @@ const Container = styled.div`
     font-size: 28px;
     color: rgb(41, 128, 185);
   }
-  a{
+  a {
     color: black;
     text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+    h2{
+      font-size: 16px;
+    }
+    em{
+      font-size: 16px;
+    }
   }
 `;
 
@@ -299,9 +346,13 @@ const Column = styled.div`
 
 const Content = styled.div`
   margin: 0 auto;
+
+  @media (max-width: 780px) {
+    font-size: 10px;
+  }
 `;
 
-// ELEMENTS IN FOOTER:
+
 // CREATED BY: ANJALI THING, NATAN RINCON LUNA, ELIJAH PALMER, TREVOR MULVANY
 
 // https://www.linkedin.com/in/anjali-thing/
@@ -316,12 +367,4 @@ const Content = styled.div`
 
 // EMAIL FOR FEEDBACK FORM -----> rapscallionfeedback@gmail.com
 
-// ADD REVIEW TAG ON COMPLETED TASKS FOR GROUP REVIEW
-// ADDITIONS / FIXES TO FOOTER NOTE 04/19/22:
 
-// 1. CURSOR POINTER FOR FEEDBACK FORM BUTTON REVIEW
-// 2. UNDER "CHECK OUT REST OF OUR WORK" ---> 1. GITHUB REPO OF THIS PROJECT AS WELL AS LINK PROFILES OF ALL GROUP MEMBERS
-
-// 3. 4TH COLUMN ----> HELPFUL RESOURCES: 1. INDEED.COM //// 2. GLASSDOOR.COM
-// 4. VERY BOTTOM OF FOOTER ---> INSPIRED BY: MONSTER.COM //// Copyright © 2022, Rapscallion, Inc. "Rapscallion" and logo are registered trademarks of Rapscallion, Inc REVIEW
-// 5. ABOUT US UNDER CONTACT US SECTION
