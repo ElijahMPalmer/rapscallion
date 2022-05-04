@@ -61,7 +61,7 @@ const createServer = (pool) => {
             } else if (await bcrypt.compare(passkey, result.rows[0].passkey)) {
                 res.send("Logged In");
             } else {
-                res.send("Access Denied");
+                res.send("no result");
             }
         } catch (err) {
             console.error(err.message);
