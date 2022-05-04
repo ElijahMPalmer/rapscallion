@@ -17,7 +17,7 @@ const pool = new Pool({
         rejectUnauthorized: false,
     },
 });
-createServer(pool);
+
 
 //Get database info↓↓↓↓↓
 const createServer = (pool) => {
@@ -75,4 +75,6 @@ const createServer = (pool) => {
     return app;
 
 }
+
+createServer(pool);
 module.exports = createServer;
