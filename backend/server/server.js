@@ -8,15 +8,16 @@ const port = 4000;
 
 
 
-// const pool = new Pool({
-//     // Local host
-//     // host: "localhost",
-//     database: "rapusers",
-//     connectionString: process.env.DATABASE_URL,
-//     ssl: {
-//         rejectUnauthorized: false,
-//     },
-// });
+const pool = new Pool({
+    // Local host
+    // host: "localhost",
+    database: "rapusers",
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false,
+    },
+});
+createServer(pool);
 
 //Get database info↓↓↓↓↓
 const createServer = (pool) => {
