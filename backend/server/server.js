@@ -69,10 +69,10 @@ const createServer = (pool) => {
         }
     });
 
-    return app;
-
     app.listen(process.env.PORT || port, () => {
         //console.log(`Example app listening on port ${process.env.PORT || port}`);
     });
+    return app;
+
 }
 module.exports = createServer;
