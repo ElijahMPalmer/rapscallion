@@ -11,7 +11,7 @@ window.env = {
   "npm_config_noproxy": "",
   "HOME": "/home/elijah",
   "CHROME_DESKTOP": "code-url-handler.desktop",
-  "OLDPWD": "/home/elijah/VSCode",
+  "OLDPWD": "/home/elijah/VSCode/rapscallion/backend",
   "TERM_PROGRAM_VERSION": "1.66.2",
   "DESKTOP_SESSION": "ubuntu",
   "NVM_BIN": "/home/elijah/.nvm/versions/node/v16.13.2/bin",

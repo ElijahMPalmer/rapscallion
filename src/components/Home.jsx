@@ -11,6 +11,7 @@ import Alert from "@mui/material/Alert";
 import env from "react-dotenv";
 
 const Home = () => {
+  
   const [search, setSearch] = useState("");
   const [location, setLocation] = useState("");
   const [results, setResults] = useState([]);
@@ -18,20 +19,30 @@ const Home = () => {
   const [resultCount, setResultCount] = useState(1);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://api.getgeoapi.com/v2/ip/check?api_key=${process.env.REACT_APP_GEO_API}`
-      )
-      .then(function (response) {
-        console.log('Making Request')
-        setUserLocation(
-          `${response.data.city.name}, ${response.data.area.name}`
-        );
-      });
+    let Lat;
+    let Long;
+
+    navigator.geolocation.getCurrentPosition(function (position) {
+      Lat = position.coords.latitude;
+      Long = position.coords.longitude;
+      console.log("Latitude is :", Lat);
+      console.log("Longitude is :", Long);
+
+      axios
+        .get(
+          `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${Lat}&lon=${Long}`
+        )
+        .then(function (response) {
+          console.log(response)
+          console.log(response.data.address.city ? response.data.address.city : response.data.address.town, response.data.address.state)
+          setUserLocation(
+            `${response.data.address.city ? response.data.address.city : response.data.address.town}, ${response.data.address.state}`
+          );
+        });
+    });
   }, []);
 
   function getJobs() {
-    console.log(process.env.TEST)
     axios
       .get(
         `https://data.usajobs.gov/api/search?Keyword=${search}&LocationName=${
@@ -208,7 +219,7 @@ const Home = () => {
             sx={{ margin: "0 20px" }}
             id="no-result"
             severity="error"
-          >{`0 results for ${search} in ${location}`}</Alert>
+          >{`0 results for ${search} in ${location ? location : userLocation}`}</Alert>
         )}
         {results[0] ? (
           <JobWindow>
